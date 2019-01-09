@@ -18,6 +18,6 @@ O(n)
 #### Time
 O(n)
 ## Whiteboard
-![whiteboard image](./assets/Whiteboard.jpg)
+![whiteboard image](./Assets/Whiteboard.jpg)
 ## Solution
-![solution image](./assets/Solution.PNG)
+![solution image](./Assets/Solution.PNG)
