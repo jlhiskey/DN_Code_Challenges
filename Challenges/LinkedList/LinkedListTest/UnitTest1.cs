@@ -68,19 +68,43 @@ namespace LinkedListTest
     public class TestingIncludes
     {
         [Fact]
-        public void Test1()
+        public void TestingValueAtHead()
         {
+            //Makes a new linked list
+            LList test = new LList();
 
+            //Inserts new node into linked list.
+            test.InsertAtHead(1);
+            test.InsertAtHead(2);
+            test.InsertAtHead(3);
+
+            Assert.True(test.Includes(3));
         }
         [Fact]
-        public void Test2()
+        public void TestingValueAtTail()
         {
+            //Makes a new linked list
+            LList test = new LList();
 
+            //Inserts new node into linked list.
+            test.InsertAtHead(1);
+            test.InsertAtHead(2);
+            test.InsertAtHead(3);
+
+            Assert.True(test.Includes(1));
         }
         [Fact]
-        public void Test3()
+        public void TestingNoValueFound()
         {
+            //Makes a new linked list
+            LList test = new LList();
 
+            //Inserts new node into linked list.
+            test.InsertAtHead(1);
+            test.InsertAtHead(2);
+            test.InsertAtHead(3);
+
+            Assert.False(test.Includes(4));
         }
     }
 
