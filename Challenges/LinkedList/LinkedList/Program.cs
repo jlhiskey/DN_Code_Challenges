@@ -9,7 +9,10 @@ namespace LinkedList
         {
             LList test = new LList();
 
-            test.InsertAtHead(4);
+            test.InsertAtHead(1);
+            test.InsertAtHead(2);
+            test.InsertAtHead(3);
+            test.Includes(2);
         }
     }
 }
