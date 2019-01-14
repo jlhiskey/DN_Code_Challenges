@@ -13,6 +13,8 @@ namespace LinkedList
             test.InsertAtHead(2);
             test.InsertAtHead(3);
             test.PrintValues();
+            Console.ReadLine();
+
         }
     }
 }

@@ -58,6 +58,7 @@ namespace LinkedList.Classes
             {
                 //Populates print array with value of node
                 printArray[currentNodePosition] = Current.Value;
+                Console.WriteLine($"Node {currentNodePosition + 1}) Value = {Current.Value}");
                 
                 //Changes current node position value
                 currentNodePosition = currentNodePosition + 1;
