@@ -1,4 +1,5 @@
 ﻿using System;
+using LinkedList.Classes;
 
 namespace LinkedList
 {
@@ -6,7 +7,9 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            LList test = new LList();
+
+            test.InsertAtHead(4);
         }
     }
 }

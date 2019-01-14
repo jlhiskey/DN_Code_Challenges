@@ -10,6 +10,12 @@ namespace LinkedList.Classes
         public Node Current { get; set; }
 
         // Insert at Head
+        public void InsertAtHead(int value)
+        {
+            Node current = new Node(value);
+            current.Next = Head;
+            Head = current;
+        }
 
 
         // Includes Value
