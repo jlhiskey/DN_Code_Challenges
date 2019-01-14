@@ -12,3 +12,7 @@
 5. [Challenge 5](#)
 
 6. [Challenge 6](#)
+
+### Extra Credit Assignments
+
+1) [EC1: Fibonacci Sequence](Challenges/FibNum)
