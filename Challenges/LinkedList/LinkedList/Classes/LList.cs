@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LinkedList.Classes
 {
-    class LList
+    public class LList
     {
         public Node Head { get; set; }
         public Node Current { get; set; }
@@ -29,12 +29,6 @@ namespace LinkedList.Classes
         {
             //Sets the target node as the head of the linked list
             Current = Head;
-
-            //Checks first node value to see if it equals input value.
-            if (Current.Value == value)
-            {
-                return true;
-            }
 
             //Runs through the list until the current node doesnt have a next value.
             while (Current != null)
