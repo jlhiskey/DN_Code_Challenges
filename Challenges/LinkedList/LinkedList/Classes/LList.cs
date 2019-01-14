@@ -6,5 +6,15 @@ namespace LinkedList.Classes
 {
     class LList
     {
+        public Node Head { get; set; }
+        public Node Current { get; set; }
+
+        // Insert at Head
+
+
+        // Includes Value
+
+        // Print Value
+
     }
 }
