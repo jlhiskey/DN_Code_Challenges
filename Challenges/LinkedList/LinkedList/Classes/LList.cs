@@ -8,6 +8,7 @@ namespace LinkedList.Classes
     {
         public Node Head { get; set; }
         public Node Current { get; set; }
+        public int Size { get; set; }
 
         // Insert at Head
         public void InsertAtHead(int value)
@@ -20,6 +21,7 @@ namespace LinkedList.Classes
 
             // Sets the current node as the head of the list.
             Head = current;
+            Size = Size + 1;
         }
 
         // Includes Value
@@ -35,7 +37,7 @@ namespace LinkedList.Classes
             }
 
             //Runs through the list until the current node doesnt have a next value.
-            while (Current.Next != null)
+            while (Current != null)
             {
                 //Checks to see if the current nodes value is equal to the input value
                 if(Current.Value == value)
@@ -49,7 +51,29 @@ namespace LinkedList.Classes
             return false;
         }
 
-        // Print Value
+        // Print Values
+        public int[] PrintValues()
+        {
+            int[] printArray = new int[Size];
+            //Sets the target node as the head of the linked list
+            Current = Head;
+            //Keeps track of node position.
+            int currentNodePosition = 0;
+            //Runs through the list until the current node doesnt have a next value.
+            while (Current != null)
+            {
+                //Populates print array with value of node
+                printArray[currentNodePosition] = Current.Value;
+                
+                //Changes current node position value
+                currentNodePosition = currentNodePosition + 1;
+
+                //Moves current node to current node.next
+                Current = Current.Next;
+            }
+            //Returns printArray
+            return printArray;
+        }
 
     }
 }

@@ -12,7 +12,7 @@ namespace LinkedList
             test.InsertAtHead(1);
             test.InsertAtHead(2);
             test.InsertAtHead(3);
-            test.Includes(2);
+            test.PrintValues();
         }
     }
 }
