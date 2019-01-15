@@ -25,20 +25,78 @@ namespace LinkedList.Classes
         }
         public void Append(int value)
         {
-            //Sets the target node as the head of the linked list
-            Current = Head;
-
-            //Creates new node with input value.
-            Node current = new Node(value);
-
-            //Iterates through the linked list until it finds the last node.
-            while (Current.Next != null)
+            //Checks to see if linked list has any nodes
+            if (Head == null)
             {
-                Current = Current.Next;
+                //If not it will insert value at head
+                InsertAtHead(value);
             }
+            else
+            {
+                //Sets the target node as the head of the linked list
+                Current = Head;
 
-            //Adds new node to end of the list.
-            Current.Next = current;
+                //Creates new node with input value.
+                Node current = new Node(value);
+
+                //Iterates through the linked list until it finds the last node.
+                while (Current.Next != null)
+                {
+                    Current = Current.Next;
+                }
+
+                //Adds new node to end of the list.
+                Current.Next = current;
+                Size = Size + 1;
+            }             
+        }
+
+        public void InsertBefore(int targetValue, int value)
+        {
+            //Checks to see if linked list has any nodes
+            if (Head == null)
+            {
+                //If not it will insert value at head
+                InsertAtHead(value);
+            }
+            //Checks to see if head equals target value
+            if (Head.Value == targetValue)
+            {
+                InsertAtHead(value);
+
+            }
+            else
+            {
+                //Sets the target node as the head of the linked list
+                Current = Head;
+
+                //Creates new node with input value.
+                Node current = new Node(value);
+
+                //Iterates through the linked list until it finds the target node.
+                while (Current.Next.Value != targetValue && Current.Next.Next != null )
+                {
+                    
+                    Current = Current.Next;
+                }
+                if ((Current.Next).Value == targetValue)
+                {
+                    //Saves the rest of the list before we add new node.
+                    Node savedList = Current.Next;
+                    //Adds new node to the list.
+                    Current.Next = current;
+                    //Adds the remainder of the list back onto the list.
+                    Current.Next.Next = savedList;
+                    Size = Size + 1;
+                    //Clears memory
+                    savedList = null;
+                }
+                else
+                {
+                    Console.WriteLine("Target Value Not Found");
+                }
+                
+            }
         }
 
         // Includes Value
