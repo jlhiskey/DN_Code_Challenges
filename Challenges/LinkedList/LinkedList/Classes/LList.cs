@@ -23,6 +23,23 @@ namespace LinkedList.Classes
             Head = current;
             Size = Size + 1;
         }
+        public void Append(int value)
+        {
+            //Sets the target node as the head of the linked list
+            Current = Head;
+
+            //Creates new node with input value.
+            Node current = new Node(value);
+
+            //Iterates through the linked list until it finds the last node.
+            while (Current.Next != null)
+            {
+                Current = Current.Next;
+            }
+
+            //Adds new node to end of the list.
+            Current.Next = current;
+        }
 
         // Includes Value
         public bool Includes(int value)
