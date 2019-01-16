@@ -9,7 +9,7 @@
 
 4. [Implementation: Linked List](DataStructures/LinkedList)
 
-5. [Challenge 5](#)
+5. [Challenge: Linked List Kth From End]((Challenges/ll_kth_from_end))
 
 6. [Challenge 6](#)
 
