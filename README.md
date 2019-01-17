@@ -11,7 +11,7 @@
 
 5. [Challenge: Linked List Kth From End](Challenges/ll_kth_from_end)
 
-6. [Challenge 6](#)
+6. [Challenge: Linked List Merge](Challenges/ll_merge)
 
 ### Extra Credit Assignments
 
