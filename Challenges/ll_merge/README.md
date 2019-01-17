@@ -11,9 +11,8 @@
 - I also handled cases where either one or the other of the input LL were empty or if both LL were empty.
 
 ### Efficiency
-My original whiteboard approach was a O(n) time and space solution.
 #### Space
-O(1)
+O(n)
 #### Time
-O(1)
+O(n)
 
