@@ -129,7 +129,6 @@ namespace LinkedList.Classes
                 //Iterates through the linked list until it finds the target node.
                 while (Current.Value != targetValue && Current.Next != null)
                 {
-
                     Current = Current.Next;
                 }
                 if (Current.Value == targetValue)

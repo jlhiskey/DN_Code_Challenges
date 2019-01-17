@@ -16,6 +16,9 @@
 - I created the node class first and then built the linked list class.
 - I then created the InsertAtHead method within the linked list class.
     - Checks value of a linked list and adds head to current.next then sets current node as head.
+- I created the Append method which will either add the new node at the head of an empty list or it will interate until it reaches the end of the list and then will add the new node at the end of the list.
+- I created the InsertBefore method which will take in a target node value and a new node value. It will then check the linked list to find the target node and if it finds the target node it will then add the new node with the new value before that target node and then will reattach the existing data to the list.
+- The insert after method works the same as the InsertBefore method but will instead add the new node with the new value after the target node.
 - I then created the Includes method which interates through the linked list and returns true if if input value is equal to current.value.
 -I then created a print method and decided that I would all a size property to the linked list class that would keep track of how big the linked list was so the when you were printing it would add the values to an array where Head = index 0. 
 ### Efficiency
@@ -30,6 +33,21 @@ O(1)
 #### Time
 O(n)
 #### Print method
+#### Space
+O(n)
+#### Time
+O(n)
+#### Append method
+#### Space
+O(n)
+#### Time
+O(n)
+#### InsertBefore method
+#### Space
+O(n)
+#### Time
+O(n)
+#### InsertAfter method
 #### Space
 O(n)
 #### Time
