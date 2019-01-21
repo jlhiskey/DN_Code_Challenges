@@ -90,5 +90,30 @@ namespace StacksAndQueuesTests
             Stack testStack = new Stack();
             Assert.Null(testStack.Pop());
         }
+
+        [Fact]
+        public void TestingPeekWithOneNode()
+        {
+            Stack testStack = new Stack();
+            Node expected = testStack.Push(1);
+            Assert.Equal(expected, testStack.Peek());
+        }
+
+        [Fact]
+        public void TestingPeekWithTwoNodes()
+        {
+            Stack testStack = new Stack();
+            testStack.Push(1);
+            Node expected = testStack.Push(2);
+            Assert.Equal(expected, testStack.Peek());
+        }
+
+        [Fact]
+        public void TestingPeekWithNoNodes()
+        {
+            Stack testStack = new Stack();
+            
+            Assert.Null(testStack.Peek());
+        }
     }
 }
