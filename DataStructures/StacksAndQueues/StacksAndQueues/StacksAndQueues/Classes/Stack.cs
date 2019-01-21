@@ -60,7 +60,15 @@ namespace StacksAndQueues.Classes
                 Size = Size + 1;
                 return helper;
             }
-            
+        }
+
+        /// <summary>
+        /// Returns value that is Top of the stack.
+        /// </summary>
+        /// <returns></returns>
+        public Node Peek()
+        {
+            return Top;
         }
     }
 }
