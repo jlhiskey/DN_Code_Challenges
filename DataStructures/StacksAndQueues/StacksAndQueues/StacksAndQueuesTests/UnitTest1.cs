@@ -62,5 +62,33 @@ namespace StacksAndQueuesTests
             Node expected = testStack.Top;
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void TestingPopWithOneNode()
+        {
+            Stack testStack = new Stack();
+            Node expected = testStack.Push(1);
+            Node actual = testStack.Pop();
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void TestingPopWithTwoNodes()
+        {
+            Stack testStack = new Stack();
+            testStack.Push(1);
+            Node expected = testStack.Push(2);
+            testStack.Push(3);
+            testStack.Pop();
+            Node actual = testStack.Pop();
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void TestingPopWithEmptyStack()
+        {
+            Stack testStack = new Stack();
+            Assert.Null(testStack.Pop());
+        }
     }
 }
