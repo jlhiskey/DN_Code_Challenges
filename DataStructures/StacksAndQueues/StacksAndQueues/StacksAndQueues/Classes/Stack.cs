@@ -57,7 +57,7 @@ namespace StacksAndQueues.Classes
                 Node helper = Top;
                 Top = Top.Next;
                 helper.Next = null;
-                Size = Size + 1;
+                Size = Size - 1;
                 return helper;
             }
         }

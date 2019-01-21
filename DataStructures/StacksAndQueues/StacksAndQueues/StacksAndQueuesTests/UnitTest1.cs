@@ -115,5 +115,41 @@ namespace StacksAndQueuesTests
             
             Assert.Null(testStack.Peek());
         }
+
+        [Fact]
+        public void TestingGetSizeWithOneNode()
+        {
+            Stack testStack = new Stack();
+            testStack.Push(1);
+            Assert.Equal(1, testStack.GetSize());
+        }
+
+        [Fact]
+        public void TestingGetSizeWithThreeNodes()
+        {
+            Stack testStack = new Stack();
+            testStack.Push(1);
+            testStack.Push(2);
+            testStack.Push(3);
+            Assert.Equal(3, testStack.GetSize());
+        }
+
+        [Fact]
+        public void TestingGetSizeWithThreeNodesAndAPop()
+        {
+            Stack testStack = new Stack();
+            testStack.Push(1);
+            testStack.Push(2);
+            testStack.Pop();
+            testStack.Push(3);
+            Assert.Equal(2, testStack.GetSize());
+        }
+
+        [Fact]
+        public void TestingGetSizeWithNoNodes()
+        {
+            Stack testStack = new Stack();
+            Assert.Equal(0, testStack.GetSize());
+        }
     }
 }
