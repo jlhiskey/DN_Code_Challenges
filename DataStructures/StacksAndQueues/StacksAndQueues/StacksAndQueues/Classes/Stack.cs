@@ -70,5 +70,14 @@ namespace StacksAndQueues.Classes
         {
             return Top;
         }
+
+        /// <summary>
+        /// Returns int value representing total nodes in stack.
+        /// </summary>
+        /// <returns>int</returns>
+        public int GetSize()
+        {
+            return Size;
+        }
     }
 }
