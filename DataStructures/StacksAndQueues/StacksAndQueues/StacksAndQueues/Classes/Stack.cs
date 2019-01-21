@@ -28,14 +28,39 @@ namespace StacksAndQueues.Classes
 
         }
 
-        public void Push(int value)
+        /// <summary>
+        /// Adds a new node to the stack.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>Returns Top of stack.</returns>
+        public Node Push(int value)
         {
             Node node = new Node(value);
             node.Next = Top;
             Top = node;
             Size = Size + 1;
+            return Top;
         }
 
-
+        /// <summary>
+        /// Checks for size of stack and removes Top value of stack if Size > 0.
+        /// </summary>
+        /// <returns>Returns popped node.</returns>
+        public Node Pop()
+        {
+            if( Size == 0)
+            {
+                return null;
+            }
+            else
+            {
+                Node helper = Top;
+                Top = Top.Next;
+                helper.Next = null;
+                Size = Size + 1;
+                return helper;
+            }
+            
+        }
     }
 }
