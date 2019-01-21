@@ -28,6 +28,14 @@ namespace StacksAndQueues.Classes
 
         }
 
+        public void Push(int value)
+        {
+            Node node = new Node(value);
+            node.Next = Top;
+            Top = node;
+            Size = Size + 1;
+        }
+
 
     }
 }
