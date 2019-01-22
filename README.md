@@ -14,6 +14,7 @@
 6. [Challenge: Linked List Merge](Challenges/ll_merge)
 
 7. [Implementation: Stacks and Queues](DataStructures/StacksAndQueues)
+8. [Challenge: Queue With Stacks](Challenges/QueueWithStacks)
 
 ### Extra Credit Assignments
 
