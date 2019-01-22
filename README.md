@@ -13,6 +13,8 @@
 
 6. [Challenge: Linked List Merge](Challenges/ll_merge)
 
+7. [Implementation: Stacks and Queues](DataStructures/StacksAndQueues)
+
 ### Extra Credit Assignments
 
 1) [EC1: Fibonacci Sequence](Challenges/FibNum)
