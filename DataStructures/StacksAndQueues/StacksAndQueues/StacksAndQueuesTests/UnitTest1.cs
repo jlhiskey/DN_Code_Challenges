@@ -206,6 +206,14 @@ namespace StacksAndQueuesTests
             Assert.Equal(2, testQueue.Enqueue(2).Value);
         }
 
+        [Fact]
+        public void TestingDequeueWithOneNode()
+        {
+            Node test = new Node(1);
+            Queue testQueue = new Queue(test);           
+            Assert.Equal(test, testQueue.Dequeue());
+        }
+
 
     }
      

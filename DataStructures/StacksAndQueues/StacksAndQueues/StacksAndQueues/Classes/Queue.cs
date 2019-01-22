@@ -80,5 +80,14 @@ namespace StacksAndQueues.Classes
         {
             return Front;
         }
+
+        /// <summary>
+        /// Returns number of nodes in queue.
+        /// </summary>
+        /// <returns></returns>
+        public int GetSize()
+        {
+            return Size;
+        }
     }
 }
