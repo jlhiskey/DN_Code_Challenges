@@ -13,19 +13,19 @@ namespace QueueWithStacks.Classes
         public Node Front { get; set; }
         public Node Back { get; set; }
 
-        public PsuedoQueue(Node node)
+        public PsuedoQueue(int value)
         {
+           Node node = stackOne.Push(value);
             Front = node;
             Back = node;
-            
         }
 
-        public int Enqueue(Node node)
+        public int Enqueue(int value)
         {
 
         }
 
-        public int Dequeue(Node node)
+        public int Dequeue(int value)
         {
 
         }
