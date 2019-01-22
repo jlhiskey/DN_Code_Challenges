@@ -258,6 +258,32 @@ namespace StacksAndQueuesTests
             Assert.Null(testQueue.Peek());
         }
 
+        [Fact]
+        public void TestingGetSizeOfNewlyCreatedQueueWithNode()
+        {
+            Node test = new Node(1);
+            Queue testQueue = new Queue(test);
+            Assert.Equal(1, testQueue.GetSize());
+        }
+
+        [Fact]
+        public void TestingGetSizeOfNewlyCreatedEmptyQueue()
+        {
+            Node test = new Node(1);
+            Queue testQueue = new Queue();
+            Assert.Equal(0, testQueue.GetSize());
+        }
+
+        [Fact]
+        public void TestingGetSizeOfQueueWithThreeNodesThenDequeueOfOneNode()
+        {
+            Node test = new Node(1);
+            Queue testQueue = new Queue(test);
+            testQueue.Enqueue(2);
+            testQueue.Enqueue(3);
+            testQueue.Dequeue();
+            Assert.Equal(2, testQueue.GetSize());
+        }
     }
      
 }
