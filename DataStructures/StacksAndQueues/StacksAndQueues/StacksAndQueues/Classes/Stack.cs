@@ -49,6 +49,7 @@ namespace StacksAndQueues.Classes
         {
             if( Size == 0)
             {
+                Console.WriteLine("Stack Empty");
                 return null;
             }
             else

@@ -59,6 +59,7 @@ namespace StacksAndQueues.Classes
         {
             if (Size == 0)
             {
+                Console.WriteLine("Queue empty");
                 return null;
             }
             else
@@ -69,6 +70,15 @@ namespace StacksAndQueues.Classes
                 Size = Size - 1;
                 return helper;
             }
+        }
+
+        /// <summary>
+        /// Returns node that is at the front of the queue.
+        /// </summary>
+        /// <returns>Node</returns>
+        public Node Peek()
+        {
+            return Front;
         }
     }
 }
