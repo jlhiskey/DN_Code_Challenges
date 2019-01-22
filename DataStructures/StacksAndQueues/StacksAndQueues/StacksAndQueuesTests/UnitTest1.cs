@@ -26,7 +26,7 @@ namespace StacksAndQueuesTests
         [Fact]
         public void TestingStackCreationWithOutNode()
         {
-           
+
             Stack testStack = new Stack();
             Assert.Null(testStack.Peek());
         }
@@ -112,7 +112,7 @@ namespace StacksAndQueuesTests
         public void TestingPeekWithNoNodes()
         {
             Stack testStack = new Stack();
-            
+
             Assert.Null(testStack.Peek());
         }
 
@@ -151,5 +151,34 @@ namespace StacksAndQueuesTests
             Stack testStack = new Stack();
             Assert.Equal(0, testStack.GetSize());
         }
+
+
+
     }
+    public class QueueTestSuite
+    {
+        [Fact]
+        public void TestingCreatingNewQueueWithNodeOne()
+        {
+            Node test = new Node(1);
+            Queue testQueue = new Queue(test);
+            Assert.Equal(test, testQueue.Peek());
+        }
+
+        [Fact]
+        public void TestingCreatingNewQueueWithNodeTwo()
+        {
+            Node test = new Node(7);
+            Queue testQueue = new Queue(test);
+            Assert.Equal(test, testQueue.Peek());
+        }
+
+        [Fact]
+        public void TestingCreatingNewQueueWithoutNode()
+        {
+            Queue testQueue = new Queue();
+            Assert.Null(testQueue.Peek());
+        }
+    }
+     
 }
