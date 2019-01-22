@@ -31,4 +31,6 @@ O(1)
 O(1)
 #### Time
 O(n)
+## Whiteboard
+![whiteboard image](./Assets/Whiteboard.jpg)
 
