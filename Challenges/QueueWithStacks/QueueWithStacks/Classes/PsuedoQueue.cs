@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QueueWithStacks.Classes
 {
-    class PsuedoQueue
+    public class PsuedoQueue
     {
         Stack stackOne = new Stack();
         Stack stackTwo = new Stack();
@@ -16,18 +16,39 @@ namespace QueueWithStacks.Classes
         public PsuedoQueue(int value)
         {
            Node node = stackOne.Push(value);
-            Front = node;
-            Back = node;
+           
         }
 
+        /// <summary>
+        /// Adds value onto PsuedoQueue
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public int Enqueue(int value)
         {
-
+            Node node = stackOne.Push(value);
+         
+            return node.Value;
         }
 
-        public int Dequeue(int value)
+        /// <summary>
+        /// Removes value from PsuedoQueue
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public int Dequeue()
         {
-
+            Node current;
+            while (stackOne.Peek() != null)
+            {
+                stackTwo.Push(stackOne.Pop().Value);
+            }
+            current = stackTwo.Pop();
+            while (stackTwo.Peek() != null)
+            {
+                stackOne.Push(stackTwo.Pop().Value);
+            }
+            return current.Value;
         }
     }
 }
