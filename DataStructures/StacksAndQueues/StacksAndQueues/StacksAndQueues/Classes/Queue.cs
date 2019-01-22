@@ -25,7 +25,7 @@ namespace StacksAndQueues.Classes
         /// Adds new node to the back of the queue and then once added returns value of node.
         /// </summary>
         /// <param name="value"></param>
-        /// <returns></returns>
+        /// <returns>Node</returns>
         public Node Enqueue(int value)
         {
             Node node = new Node(value);
@@ -33,6 +33,26 @@ namespace StacksAndQueues.Classes
             Back = node;
             Size = Size + 1;
             return Back;
+        }
+
+        /// <summary>
+        /// Returns oldest node in the queue.
+        /// </summary>
+        /// <returns>Node</returns>
+        public Node Dequeue()
+        {
+            if (Size == 0)
+            {
+                return null;
+            }
+            else
+            {
+                Node helper = Front;
+                Front = Front.Next;
+                helper.Next = null;
+                Size = Size - 1;
+                return helper;
+            }
         }
     }
 }
