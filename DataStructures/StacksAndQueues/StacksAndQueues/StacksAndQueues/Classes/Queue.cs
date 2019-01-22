@@ -22,6 +22,14 @@ namespace StacksAndQueues.Classes
         }
 
         /// <summary>
+        /// Creates an empty queue.
+        /// </summary>
+        public Queue()
+        {
+
+        }
+
+        /// <summary>
         /// Adds new node to the back of the queue and then once added returns value of node.
         /// </summary>
         /// <param name="value"></param>
@@ -29,8 +37,16 @@ namespace StacksAndQueues.Classes
         public Node Enqueue(int value)
         {
             Node node = new Node(value);
-            Back.Next = node;
-            Back = node;
+            if (Size == 0)
+            {
+                Front = node;
+                Back = node;
+            }
+            else
+            {
+                Back.Next = node;
+                Back = node;
+            }
             Size = Size + 1;
             return Back;
         }
