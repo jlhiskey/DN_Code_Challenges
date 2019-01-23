@@ -16,3 +16,5 @@ O(n)
 #### Time
 O(n)
 
+## Whiteboard
+![whiteboard image](./Assets/Whiteboard.jpg)
