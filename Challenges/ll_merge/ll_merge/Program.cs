@@ -19,7 +19,9 @@ namespace ll_merge
             testList2.InsertAtHead(4);
             testList2.InsertAtHead(2);
 
-            LList Result = Merge(testList, testList2);
+            LList result = Merge(testList, testList2);
+            result.PrintValues();
+            Console.ReadLine();
         }
 
         /// <summary>
