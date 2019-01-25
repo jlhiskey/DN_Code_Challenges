@@ -89,12 +89,15 @@ namespace AnimalShelterTestSuite
         }
 
         [Fact]
-        public void TestingTwoCatEnqueueOneDogDequeue()
+        public void TestingStretchGoalIfDequeueTypeIsntInShelterGiveOldest()
         {
             AnimalShelterClass test = new AnimalShelterClass("Test Shelter");
             test.Enqueue(AnimalType.cat, "Gregor");
             test.Enqueue(AnimalType.cat, "BAMF");
-            Assert.Equal("Gregor", test.Dequeue(AnimalType.dog).Name);
+            test.Enqueue(AnimalType.dog, "Harley");
+            test.Dequeue(AnimalType.cat);
+            test.Dequeue(AnimalType.cat);
+            Assert.Equal("Harley", test.Dequeue(AnimalType.cat).Name);
         }
     }
 }

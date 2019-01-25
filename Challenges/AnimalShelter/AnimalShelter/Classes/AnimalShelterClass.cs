@@ -72,12 +72,9 @@ namespace AnimalShelter.Classes
             else
             {
                 while (animalShelter.Peek().ShowType() != animal)
-                {
-                    while (animalShelter.Size > 0)
-                    {
-                        helperShelter.Enqueue(animalShelter.Dequeue());
-                    }
-                    break;
+                { 
+                    helperShelter.Enqueue(animalShelter.Dequeue());
+                    
                 } 
                 // Captures animal if found and makes it adoptedAnimal
                 if (animalShelter.Size > 0)
