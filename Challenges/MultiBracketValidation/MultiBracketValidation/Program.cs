@@ -4,7 +4,7 @@ using StacksAndQueues.Classes;
 
 namespace MultiBracketValidation
 {
-    class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
@@ -16,9 +16,7 @@ namespace MultiBracketValidation
             MultiBracketValidation("[({}]");
             MultiBracketValidation("(](");
             MultiBracketValidation("{(})");
-
             Console.ReadLine();
-            
         }
 
         /// <summary>
@@ -72,7 +70,6 @@ namespace MultiBracketValidation
                         counter++;
                         break;
                 }
-
             }
             Console.WriteLine($"Is {input} balanced? {validation}");
             return validation;
