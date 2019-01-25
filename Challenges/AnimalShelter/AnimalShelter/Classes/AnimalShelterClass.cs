@@ -33,18 +33,18 @@ namespace AnimalShelter.Classes
         /// <returns>Animal from animalShelter</returns>
         public Animal Enqueue(AnimalType animal, string name)
         {
+            Animal result;
             if (animal == AnimalType.cat)
             {
-                Cat newCat = new Cat(name);
-                Animal result = animalShelter.Enqueue(newCat);
-                return result;
+                result = new Cat(name);
             }
             else
             {
-                Dog newDog = new Dog(name);
-                Animal result = animalShelter.Enqueue(newDog);
-                return result;
-            }           
+                result = new Dog(name);
+            }
+            result = animalShelter.Enqueue(result);
+            Console.WriteLine($"You just abandoned {result.Name} the {result.ShowType()}.");
+            return result;
         }
 
         /// <summary>
@@ -59,6 +59,7 @@ namespace AnimalShelter.Classes
             // Will return null if animal shelter is empty.
             if (animalShelter.Peek() == null)
             {
+                Console.WriteLine("No Animals in Shelter");
                 return null;
             }
             // Checks to see if the animal at the front of the line equals the search animal and returns it or if the animal shelter only has one animal returns it. Optimized so that you dont have to flop animals to helper stack if you dont need to.
@@ -71,9 +72,10 @@ namespace AnimalShelter.Classes
             else
             {
                 while (animalShelter.Peek().ShowType() != animal)
-                {
+                { 
                     helperShelter.Enqueue(animalShelter.Dequeue());
-                }
+                    
+                } 
                 // Captures animal if found and makes it adoptedAnimal
                 if (animalShelter.Size > 0)
                 {
@@ -93,9 +95,10 @@ namespace AnimalShelter.Classes
             }
             // If target animal isnt found adopts oldest animal in shelter.
             if (foundAnimal == false)
-            {
-                adoptedAnimal = animalShelter.Dequeue();
+            {   
+                adoptedAnimal = animalShelter.Dequeue();   
             }
+            Console.WriteLine($"Congrats you just adopted {adoptedAnimal.Name} the {adoptedAnimal.ShowType()}.");
             return adoptedAnimal;
         }
     }

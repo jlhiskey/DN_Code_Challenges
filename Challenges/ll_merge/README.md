@@ -18,3 +18,4 @@ O(n)
 
 ## Whiteboard
 ![whiteboard image](./Assets/Whiteboard.jpg)
+- Whiteboard Author: Tyler Hood
