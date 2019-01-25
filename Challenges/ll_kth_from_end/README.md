@@ -18,3 +18,4 @@ O(1)
 O(n-k) Since size is already calculated I don't have to iterate through the whole list to count it.
 ## Whiteboard
 ![whiteboard image](./Assets/Whiteboard.jpg)
+- Whiteboard Author: Tyler Hood

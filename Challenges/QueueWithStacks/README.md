@@ -33,4 +33,5 @@ O(1)
 O(n)
 ## Whiteboard
 ![whiteboard image](./Assets/Whiteboard.jpg)
+- Whiteboard Author: Dev Shrestha 
 
