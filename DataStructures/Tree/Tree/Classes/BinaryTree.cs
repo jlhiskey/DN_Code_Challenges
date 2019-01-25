@@ -13,7 +13,7 @@ namespace Tree.Classes
             
         }
 
-        public int Add()
+        public int Add(int Value)
         {
 
         }
@@ -23,6 +23,11 @@ namespace Tree.Classes
 
         }
 
+        public Traversal()
+        {
+
+        }
+        
         public int[] PreOrder()
         {
 
