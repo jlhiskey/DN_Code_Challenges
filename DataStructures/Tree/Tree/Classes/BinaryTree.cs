@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Tree.Classes
 {
-    class BinaryTree
+    public class BinaryTree
     {
-        Node Root { get; set; }
+        public Node Root { get; set; }
         
         public BinaryTree()
         {
-            
+            Root = null;
         }
         
         /// <summary>
@@ -18,21 +18,23 @@ namespace Tree.Classes
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public List<int> PreOrder(Node root)
+        public List<int> PreOrder()
         {
+            Node root = Root;
             List<int> preOrderValues = new List<int>();
             void PreOrderHelper(Node helperRoot, List<int> listOfValues)
             {
-                if (root == null)
+                if (helperRoot == null)
                 {
                     return;
                 }
-                listOfValues.Add(root.Value);
-                PreOrderHelper(root.Left, listOfValues);
-                PreOrderHelper(root.Right, listOfValues);
+
+                listOfValues.Add(helperRoot.Value);
+                PreOrderHelper(helperRoot.Left, listOfValues);
+                PreOrderHelper(helperRoot.Right, listOfValues);
             }
             PreOrderHelper(root, preOrderValues);
-            PrintValues(preOrderValues);
+            PrintValues(preOrderValues, 1);
             return preOrderValues;
         }
 
@@ -41,21 +43,22 @@ namespace Tree.Classes
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public List<int> InOrder(Node root)
+        public List<int> InOrder()
         {
+            Node root = Root;
             List<int> inOrderValues = new List<int>();
             void InOrderHelper(Node helperRoot, List<int> listOfValues)
             {
-                if (root == null)
+                if (helperRoot == null)
                 {
                     return;
                 }
-                InOrderHelper(root.Left, listOfValues);
-                listOfValues.Add(root.Value);
-                InOrderHelper(root.Right, listOfValues);
+                InOrderHelper(helperRoot.Left, listOfValues);
+                listOfValues.Add(helperRoot.Value);
+                InOrderHelper(helperRoot.Right, listOfValues);
             }
             InOrderHelper(root, inOrderValues);
-            PrintValues(inOrderValues);
+            PrintValues(inOrderValues, 2);
             return inOrderValues;
         }
 
@@ -64,21 +67,22 @@ namespace Tree.Classes
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public List<int> PostOrder(Node root)
+        public List<int> PostOrder()
         {
+            Node root = Root;
             List<int> postOrderValues = new List<int>();
             void InOrderHelper(Node helperRoot, List<int> listOfValues)
             {
-                if (root == null)
+                if (helperRoot == null)
                 {
                     return;
                 }
-                InOrderHelper(root.Left, listOfValues);
-                InOrderHelper(root.Right, listOfValues);
-                listOfValues.Add(root.Value);
+                InOrderHelper(helperRoot.Left, listOfValues);
+                InOrderHelper(helperRoot.Right, listOfValues);
+                listOfValues.Add(helperRoot.Value);
             }
             InOrderHelper(root, postOrderValues);
-            PrintValues(postOrderValues);
+            PrintValues(postOrderValues, 3);
             return postOrderValues;
         }
 
@@ -86,13 +90,32 @@ namespace Tree.Classes
         /// Helper function that will print list values of each traversal in the console.
         /// </summary>
         /// <param name="listOfIntegers"></param>
-        void PrintValues(List<int> listOfIntegers)
+        void PrintValues(List<int> listOfIntegers, int searchType)
         {
-            Console.WriteLine(listOfIntegers);
+            string response = "null";
+
+            switch (searchType)
+            {
+                case 1:
+                    response = "Pre-Order";
+                    break;
+                case 2:
+                    response = "In-Order";
+                    break;
+                case 3:
+                    response = "Post-Order";
+                    break;
+                default:
+                    break;
+            }
+
+            Console.WriteLine($"{response} Traversal Results:");
             foreach (int integer in listOfIntegers)
             {
                 Console.Write($"{integer} ");
             }
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
 }

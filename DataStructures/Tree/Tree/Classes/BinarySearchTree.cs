@@ -6,22 +6,22 @@ namespace Tree.Classes
 {
     class BinarySearchTree
     {
-        Node Root { get; set; }
+        QueueNode Root { get; set; }
         
-        public BinarySearchTree()
-        {
+        //public BinarySearchTree()
+        //{
             
-        }
+        //}
 
-        public int Add(int Value)
-        {
+        //public int Add(int Value)
+        //{
 
-        }
+        //}
 
-        public bool Contains()
-        {
+        //public bool Contains()
+        //{
 
-        }
+        //}
         
     }
 }

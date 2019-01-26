@@ -13,6 +13,7 @@ namespace Tree.Classes
         public Node(int value)
         {
             Value = value;
+            Left = Right = null;
         }
 
     }

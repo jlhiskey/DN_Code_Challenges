@@ -6,15 +6,15 @@ namespace Tree.Classes
 {
     public class Queue
     {
-        public Node Front { get; set; }
-        public Node Back { get; set; }
+        public QueueNode Front { get; set; }
+        public QueueNode Back { get; set; }
         public int Size { get; set; } = 0;
 
         /// <summary>
         /// Creates a new queue with an initial node.
         /// </summary>
         /// <param name="node"></param>
-        public Queue(Node node)
+        public Queue(QueueNode node)
         {
             Front = node;
             Back = node;
@@ -34,7 +34,7 @@ namespace Tree.Classes
         /// </summary>
         /// <param name="value"></param>
         /// <returns>Node</returns>
-        public Node Enqueue(Node node)
+        public QueueNode Enqueue(QueueNode node)
         {
             
             if (Size == 0)
@@ -55,7 +55,7 @@ namespace Tree.Classes
         /// Returns oldest node in the queue.
         /// </summary>
         /// <returns>Node</returns>
-        public Node Dequeue()
+        public QueueNode Dequeue()
         {
             if (Size == 0)
             {
@@ -64,7 +64,7 @@ namespace Tree.Classes
             }
             else
             {
-                Node helper = Front;
+                QueueNode helper = Front;
                 Front = Front.Next;
                 helper.Next = null;
                 Size = Size - 1;
@@ -76,7 +76,7 @@ namespace Tree.Classes
         /// Returns node that is at the front of the queue.
         /// </summary>
         /// <returns>Node</returns>
-        public Node Peek()
+        public QueueNode Peek()
         {
             return Front;
         }
