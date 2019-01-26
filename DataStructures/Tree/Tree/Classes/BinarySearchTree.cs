@@ -4,33 +4,24 @@ using System.Text;
 
 namespace Tree.Classes
 {
-    class BinaryTree
+    class BinarySearchTree
     {
         Node Root { get; set; }
         
-        public BinaryTree()
+        public BinarySearchTree()
         {
             
         }
 
-        public Traversal()
+        public int Add(int Value)
+        {
+
+        }
+
+        public bool Contains()
         {
 
         }
         
-        public int[] PreOrder()
-        {
-
-        }
-
-        public int[] InOrder()
-        {
-
-        }
-
-        public int[] PostOrder()
-        {
-
-        }
     }
 }
