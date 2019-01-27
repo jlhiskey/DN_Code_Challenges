@@ -13,8 +13,7 @@ namespace Tree
             testTree.Root.Right = new Node(3);
             testTree.Root.Left.Left = new Node(4);
             testTree.Root.Left.Right = new Node(5);
-            testTree.Root.Right.Left = new Node(6);
-            testTree.Root.Right.Right = new Node(7);
+            
 
             testTree.PreOrder();
             testTree.InOrder();
