@@ -4,19 +4,51 @@ using System.Text;
 
 namespace Tree.Classes
 {
-    class BinarySearchTree
+    public class BinarySearchTree : BinaryTree
     {
-        QueueNode Root { get; set; }
-        
-        //public BinarySearchTree()
-        //{
+        int Size { get; set; } = 0;
+
+        public void Add(int value)
+        {
             
-        //}
+            Node newNode = new Node(value);
 
-        //public int Add(int Value)
-        //{
+            if (Root == null)
+            {
+                Root = newNode;
+                Size = Size + 1;
+            }
+            else
+            {
+                Node root = Root;
+                void HelperAdd(Node helperRoot, int helperValue)
+                {
+                    if (value < helperRoot.Value)
+                    {
+                        if (helperRoot.Left == null)
+                        {
+                            helperRoot.Left = newNode;
+                            Size = Size + 1;
+                        }
+                        else
+                        HelperAdd(helperRoot.Left, helperValue);
+                    }
+                    else
+                    {
+                        if (helperRoot.Right == null)
+                        {
+                            helperRoot.Right = newNode;
+                            Size = Size + 1;
+                        }
+                        else
+                            HelperAdd(helperRoot.Right, helperValue);
+                    }
+                }
+                HelperAdd(root, value);
+            }
 
-        //}
+                    
+        }
 
         //public bool Contains()
         //{
