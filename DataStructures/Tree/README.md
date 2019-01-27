@@ -1,5 +1,5 @@
 
-# Lab 10: Stacks and Queues
+# Lab 15: Trees
  - Implement a Tree
 ## Challenge
 - Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
@@ -24,47 +24,42 @@
 ## Approach & Efficiency
 ### Approach
 - I created the Node class.
-  - Properties: Value and Next
+  - Properties: Value, Left, Right
   
-- Then I built the Stack class.
-  - I decided to add a Size property that keeps track of total number of nodes in the stack. This will allow you to check for size later on when you go to pop a value so that you dont have to worry about exceptions.
-  - I created a constructor method that allowed a user to create a new stack with or without a node using an overloaded constructor.
-  - I then created a Push method which adds a new node with input value onto the stack and adds +1 to the Size of the stack and then returns the node from the stack.
-  - I then created the Pop method which will check the size of the stack and return null if the size is zero else it will remove the youngest node in the stack and return it.
-  - I then created the Peek method which will return the youngest node in the stack.
-  - I then created the GetSize method that returns the total number of nodes in the stack.
+- Then I built the BinaryTree class.
+
+  - I created a constructor method that allowed a user to create a new binary tree without a node.
+  - I then created a PreOrder method that internally creates a list to hold all of the values then recursively steps through the tree caputuring each nodes value before going left or right. It then feeds the list into a internal PrintValues method which consoles out the values for a user. I then return the values as a list.
+  - I then created a InOrder method that internally creates a list to hold all of the values then recursively steps through the tree caputuring each nodes value after going left and before going right. It then feeds the list into a internal PrintValues method which consoles out the values for a user. I then return the values as a list.
+  - I then created a PostOrder method that internally creates a list to hold all of the values then recursively steps through the tree caputuring each nodes value after going left and right. It then feeds the list into a internal PrintValues method which consoles out the values for a user. I then return the values as a list.
+
   
-- Then I built the Queue class.
-  - I decided to add a Size property that keeps track of total number of nodes in the queue. This will allow you to check for size later on when you go to dequeue a value so that you dont have to worry about exceptions.
-  - I created a constructor method that allowed a user to create a new queue with or without a node using an overloaded constructor.
-  - I then created a Enqueue method which adds a new node with input value onto the end of the queue and adds +1 to the Size of the queue and then returns the node from the queue.
-  - I then created the Dequeue method which will check the size of the queue and return null if the size is zero else it will remove the oldest node in the stack and return it.
-  - I then created the Peek method which will return the oldest node in the stack.
-  - I then created the GetSize method that returns the total number of nodes in the queue.
+- Then I built the BinarySeachTree class.
+  - To keep it simple I decided to inherete all of the BinaryTree classes properties and then added a Size property that will increase as nodes are added to the BST.
+  - I then created the Add method which will first check to see if the BST has a node at its Root and if not it will add the node onto the BST as Root. Else it will check to see if the value at the target node is greater or less the incoming value and will traverse the tree until it finds a leaf and then will add the incoming value as a node at its proper location. Once the node is added Size will increase by 1.
+  - I then created a Contain method which will traverse a BST searching for an input value and will return a boolean. I created a bool called targetFound and set it to false. I used a series of if statements with the master base case depending of targetFound to be false so that the recursion will stop if the value has already been found. It then will compare root.value to the incoming value and will either return true if it matches or will route the search to either left or right depending on the input value and the value of the node. Once the traversal has completed it will write to the console its result and then will return a bool.
+
 
 ### Efficiency
-#### Stack.Push and Queue.Enqueue methods
+#### BinaryTree Traversal (Pre, In, PostOrder) methods
+#### Space
+O(h)
+#### Time
+O(n)
+#### BinarySearchTree Add method
 #### Space
 O(1)
 #### Time
-O(1)
-#### Stack.Pop and Queue.Dequeue methods
+O(log n)
+#### BinarySearchTree Contains method
 #### Space
 O(1)
 #### Time
-O(1)
-#### Stack.Peek and Queue.Peek methods
-#### Space
-O(1)
-#### Time
-O(1)
-#### Stack.GetSize and Queue.GetSize methods
-#### Space
-O(1)
-#### Time
-O(1)
+O(log n)
 
 ## API
-### Class Stack and Queue Required Methods
+### Class BinaryTree and BinarySearchTree Required Classes
 - Both classes require Node class to be able to add nodes to the structures.
 
+## Screenshot of Usage
+![solution image](assets/usage.PNG)

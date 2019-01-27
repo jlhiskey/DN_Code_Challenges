@@ -58,15 +58,15 @@ namespace Tree.Classes
             {
                 if (!targetFound)
                 {
-                if (helperRoot == null)
-                {
+                    if (helperRoot == null)
+                    {
                     return;
-                }
-                if (helperRoot.Value == helperValue)
-                {
+                    }
+                    if (helperRoot.Value == helperValue)
+                    {
                     targetFound = true;
                     return;
-                }
+                    }
                     if (helperValue < helperRoot.Value)
                     {
                         HelperContains(helperRoot.Left, helperValue);
