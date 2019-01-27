@@ -32,7 +32,15 @@ namespace Tree
 
             Console.WriteLine("Binary Search Tree");
             testBST.InOrder();
-
+            testBST.Contains(1);
+            testBST.Contains(2);
+            testBST.Contains(3);
+            testBST.Contains(4);
+            testBST.Contains(5);
+            testBST.Contains(6);
+            testBST.Contains(7);
+            testBST.Contains(8);
+            
 
             Console.ReadLine();
         }

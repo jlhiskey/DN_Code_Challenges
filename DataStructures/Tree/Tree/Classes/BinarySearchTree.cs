@@ -50,10 +50,38 @@ namespace Tree.Classes
                     
         }
 
-        //public bool Contains()
-        //{
-
-        //}
+        public bool Contains(int value)
+        {
+            Node root = Root;
+            bool targetFound = false;
+            void HelperContains(Node helperRoot, int helperValue)
+            {
+                if (!targetFound)
+                {
+                if (helperRoot == null)
+                {
+                    return;
+                }
+                if (helperRoot.Value == helperValue)
+                {
+                    targetFound = true;
+                    return;
+                }
+                    if (helperValue < helperRoot.Value)
+                    {
+                        HelperContains(helperRoot.Left, helperValue);
+                    }
+                    else
+                    {
+                        HelperContains(helperRoot.Right, helperValue);
+                    }
+                }
+                return;
+            }
+            HelperContains(root, value);
+            Console.WriteLine($"Does this BST contain the number: {value} ? {targetFound}");
+            return targetFound;
+        }
         
     }
 }
