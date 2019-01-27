@@ -19,7 +19,9 @@
  
 9. [Challenge: Animal Shelter](Challenges/AnimalShelter)
 
-10. [Challenge: Multi-Bracket Validtion](Challenges/MultiBracketValidation)
+10. [Challenge: Multi-Bracket Validation](Challenges/MultiBracketValidation)
+
+11. [Implementation: Trees](DataStructures/Tree)
 
 
 
