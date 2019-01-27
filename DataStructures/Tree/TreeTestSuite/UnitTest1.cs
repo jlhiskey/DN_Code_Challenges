@@ -61,4 +61,115 @@ namespace TreeTestSuite
             Assert.Equal(expectedValues, testTree.PostOrder());
         }
     }
+
+    public class BinarySearchTreeTestSuite
+    {
+        [Fact]
+        public void TestingAdd()
+        {
+            BinarySearchTree testBST = new BinarySearchTree();
+            testBST.Add(4);
+            testBST.Add(2);
+            testBST.Add(6);
+            testBST.Add(1);
+            testBST.Add(3);
+            testBST.Add(5);
+            testBST.Add(7);
+
+            List<int> expectedValues = new List<int> { 1, 2, 3, 4, 5, 6, 7 };
+            Assert.Equal(expectedValues, testBST.InOrder());
+        }
+
+        [Fact]
+        public void TestingAddTwo()
+        {
+            BinarySearchTree testBST = new BinarySearchTree();
+            testBST.Add(10);
+            testBST.Add(2);
+            testBST.Add(6);
+            testBST.Add(1);
+            testBST.Add(3);
+            testBST.Add(5);
+            testBST.Add(7);
+
+            List<int> expectedValues = new List<int> { 1, 2, 3, 5, 6, 7, 10 };
+            Assert.Equal(expectedValues, testBST.InOrder());
+        }
+
+        [Fact]
+        public void TestingAddThree()
+        {
+            BinarySearchTree testBST = new BinarySearchTree();
+            testBST.Add(14);
+            testBST.Add(2);
+            testBST.Add(99);
+            testBST.Add(1);
+            testBST.Add(3);
+            testBST.Add(56);
+            testBST.Add(12);
+
+            List<int> expectedValues = new List<int> { 1, 2, 3, 12, 14, 56, 99 };
+            Assert.Equal(expectedValues, testBST.InOrder());
+        }
+
+        [Fact]
+        public void TestingContainsTrue()
+        {
+            BinarySearchTree testBST = new BinarySearchTree();
+            testBST.Add(1);
+            testBST.Add(2);
+            testBST.Add(3);
+            testBST.Add(4);
+            testBST.Add(5);
+            testBST.Add(6);
+            testBST.Add(7);
+
+            Assert.True(testBST.Contains(1));
+        }
+
+        [Fact]
+        public void TestingContainsTrueTwo()
+        {
+            BinarySearchTree testBST = new BinarySearchTree();
+            testBST.Add(1);
+            testBST.Add(2);
+            testBST.Add(3);
+            testBST.Add(4);
+            testBST.Add(5);
+            testBST.Add(6);
+            testBST.Add(7);
+
+            Assert.True(testBST.Contains(7));
+        }
+
+        [Fact]
+        public void TestingContainsFalse()
+        {
+            BinarySearchTree testBST = new BinarySearchTree();
+            testBST.Add(1);
+            testBST.Add(2);
+            testBST.Add(3);
+            testBST.Add(4);
+            testBST.Add(5);
+            testBST.Add(6);
+            testBST.Add(7);
+
+            Assert.False(testBST.Contains(8));
+        }
+
+        [Fact]
+        public void TestingContainsFalseTwo()
+        {
+            BinarySearchTree testBST = new BinarySearchTree();
+            testBST.Add(1);
+            testBST.Add(2);
+            testBST.Add(3);
+            testBST.Add(4);
+            testBST.Add(5);
+            testBST.Add(6);
+            testBST.Add(7);
+
+            Assert.False(testBST.Contains(99));
+        }
+    }
 }
