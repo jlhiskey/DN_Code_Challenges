@@ -18,11 +18,11 @@ namespace FizzBuzzTree.Classes
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public List<int> PreOrder()
+        public List<string> PreOrder()
         {
             Node root = Root;
-            List<int> preOrderValues = new List<int>();
-            void PreOrderHelper(Node helperRoot, List<int> listOfValues)
+            List<string> preOrderValues = new List<string>();
+            void PreOrderHelper(Node helperRoot, List<string> listOfValues)
             {
                 if (helperRoot == null)
                 {
@@ -43,11 +43,11 @@ namespace FizzBuzzTree.Classes
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public List<int> InOrder()
+        public List<string> InOrder()
         {
             Node root = Root;
-            List<int> inOrderValues = new List<int>();
-            void InOrderHelper(Node helperRoot, List<int> listOfValues)
+            List<string> inOrderValues = new List<string>();
+            void InOrderHelper(Node helperRoot, List<string> listOfValues)
             {
                 if (helperRoot == null)
                 {
@@ -67,11 +67,11 @@ namespace FizzBuzzTree.Classes
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public List<int> PostOrder()
+        public List<string> PostOrder()
         {
             Node root = Root;
-            List<int> postOrderValues = new List<int>();
-            void InOrderHelper(Node helperRoot, List<int> listOfValues)
+            List<string> postOrderValues = new List<string>();
+            void InOrderHelper(Node helperRoot, List<string> listOfValues)
             {
                 if (helperRoot == null)
                 {
@@ -89,8 +89,8 @@ namespace FizzBuzzTree.Classes
         /// <summary>
         /// Helper function that will print list values of each traversal in the console.
         /// </summary>
-        /// <param name="listOfIntegers"></param>
-        void PrintValues(List<int> listOfIntegers, int searchType)
+        /// <param name="listOfValues"></param>
+        void PrintValues(List<string> listOfValues, int searchType)
         {
             string response = "null";
 
@@ -110,9 +110,9 @@ namespace FizzBuzzTree.Classes
             }
 
             Console.WriteLine($"{response} Traversal Results:");
-            foreach (int integer in listOfIntegers)
+            foreach (string value in listOfValues)
             {
-                Console.Write($"{integer} ");
+                Console.Write($"{value} ");
             }
             Console.WriteLine();
             Console.WriteLine();

@@ -6,15 +6,14 @@ namespace FizzBuzzTree.Classes
 {
     public class Node
     {
-        public int Value { get; set; }
+        public string Value { get; set; }
         public Node Left { get; set; }
         public Node Right { get; set; }
 
-        public Node(int value)
+        public Node(string value)
         {
             Value = value;
             Left = Right = null;
         }
-
     }
 }
