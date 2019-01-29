@@ -14,6 +14,8 @@ namespace FizzBuzzTree
             testTree.Root.Left.Left = new Node("4");
             testTree.Root.Left.Right = new Node("7");
             FizzBuzzTree(testTree);
+            Console.WriteLine(testTree.ToString());
+            ;
             Console.ReadLine();
         }
 
