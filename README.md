@@ -23,6 +23,8 @@
 
 11. [Implementation: Trees](DataStructures/Tree)
 
+12. [Challenge: FizzBuzzTree](Challenges/FizzBuzzTree)
+
 
 
 ### Extra Credit Assignments
