@@ -25,6 +25,8 @@
 
 12. [Challenge: FizzBuzzTree](Challenges/FizzBuzzTree)
 
+13. [Challenge: Breath First Traversal](Challenges/BreadthFirstTraversal)
+
 
 
 ### Extra Credit Assignments
