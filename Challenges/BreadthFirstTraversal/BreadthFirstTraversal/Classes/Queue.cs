@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Tree.Classes;
 
 namespace StacksAndQueues.Classes
 {
     public class Queue
     {
-        public Node Front { get; set; }
-        public Node Back { get; set; }
+        public QNode Front { get; set; }
+        public QNode Back { get; set; }
         public int Size { get; set; } = 0;
 
         /// <summary>
         /// Creates a new queue with an initial node.
         /// </summary>
         /// <param name="node"></param>
-        public Queue(Node node)
+        public Queue(QNode node)
         {
             Front = node;
             Back = node;
@@ -34,9 +35,9 @@ namespace StacksAndQueues.Classes
         /// </summary>
         /// <param name="value"></param>
         /// <returns>Node</returns>
-        public Node Enqueue(int value)
+        public QNode Enqueue(Node value)
         {
-            Node node = new Node(value);
+            QNode node = new QNode(value);
             if (Size == 0)
             {
                 Front = node;
@@ -55,7 +56,7 @@ namespace StacksAndQueues.Classes
         /// Returns oldest node in the queue.
         /// </summary>
         /// <returns>Node</returns>
-        public Node Dequeue()
+        public QNode Dequeue()
         {
             if (Size == 0)
             {
@@ -64,7 +65,7 @@ namespace StacksAndQueues.Classes
             }
             else
             {
-                Node helper = Front;
+                QNode helper = Front;
                 Front = Front.Next;
                 helper.Next = null;
                 Size = Size - 1;
@@ -76,7 +77,7 @@ namespace StacksAndQueues.Classes
         /// Returns node that is at the front of the queue.
         /// </summary>
         /// <returns>Node</returns>
-        public Node Peek()
+        public QNode Peek()
         {
             return Front;
         }
