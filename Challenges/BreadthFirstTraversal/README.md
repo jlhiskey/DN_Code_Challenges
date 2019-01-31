@@ -35,3 +35,10 @@ O(n)
 
 ## Whiteboard
 ![whiteboard image](./assets/Whiteboard.jpg)
+
+## API
+### BreadthFirstTraversal Required Classes
+- BinaryTree class
+- Node class
+- Queue class
+- Queue Node class

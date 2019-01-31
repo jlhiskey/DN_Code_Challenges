@@ -39,3 +39,7 @@ O(n)
 ![whiteboard image](./assets/Whiteboard.jpg)
 - Whiteboard Author: Andrew Hinojosa
 
+## API
+### FizzBuzz Required Classes
+- BinaryTree class
+- Node class
