@@ -34,18 +34,17 @@ namespace FindMaxValueTestSuite
             testTree.Root.Left.Left = new Node(9);
             testTree.Root.Left.Right = new Node(6);
             testTree.Root.Left.Right.Left = new Node(5);
-            testTree.Root.Left.Right.Right = new Node(11);
+            testTree.Root.Left.Right.Right = new Node(99);
             testTree.Root.Right.Right = new Node(9);
-            testTree.Root.Right.Right.Left = new Node(11);
+            testTree.Root.Right.Right.Left = new Node(99);
 
-            Assert.Equal(11, Program.FindMaxValue(testTree));
+            Assert.Equal(99, Program.FindMaxValue(testTree));
         }
 
         [Fact]
         public void TestingUsingEmptyTree()
         {
-            BinaryTree testTree = new BinaryTree();
-            
+            BinaryTree testTree = new BinaryTree(); 
 
             Assert.Equal(0, Program.FindMaxValue(testTree));
         }

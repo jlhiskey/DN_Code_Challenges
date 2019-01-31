@@ -27,6 +27,8 @@
 
 13. [Challenge: Breath First Traversal](Challenges/BreadthFirstTraversal)
 
+14. [Challenge: Find Max Value](Challenges/FindMaxValue)
+
 
 
 ### Extra Credit Assignments
