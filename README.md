@@ -33,4 +33,7 @@
 
 ### Extra Credit Assignments
 
-1) [EC1: Fibonacci Sequence](Challenges/FibNum)
+1. [EC1: Fibonacci Sequence](Challenges/FibNum)
+
+1. [EC2: Compare Leaves](Challenges/CompareLeaves)
+
