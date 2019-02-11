@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateHeightAndLevel", "CalculateHeightAndLevel\CalculateHeightAndLevel.csproj", "{636D528C-73A1-4203-8F1F-0DCF8272822C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcHeightAndLevelTestSuite", "CalcHeightAndLevelTestSuite\CalcHeightAndLevelTestSuite.csproj", "{C7BB752E-B4BA-4621-89C5-BE2FD6082D24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{636D528C-73A1-4203-8F1F-0DCF8272822C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{636D528C-73A1-4203-8F1F-0DCF8272822C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{636D528C-73A1-4203-8F1F-0DCF8272822C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BB752E-B4BA-4621-89C5-BE2FD6082D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BB752E-B4BA-4621-89C5-BE2FD6082D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BB752E-B4BA-4621-89C5-BE2FD6082D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BB752E-B4BA-4621-89C5-BE2FD6082D24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
