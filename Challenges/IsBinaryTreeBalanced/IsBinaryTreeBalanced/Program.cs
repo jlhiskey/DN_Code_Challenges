@@ -40,9 +40,14 @@ namespace IsBinaryTreeBalanced
             Console.ReadLine();
         }
 
-        
+        /// <summary>
+        /// Takes in a tree as an input and returns a bool indicating if it is balanced.
+        /// </summary>
+        /// <param name="tree"></param>
+        /// <returns></returns>
         public static bool IsBinaryTreeBalanced(BinaryTree tree)
         {
+            /// Helper method that will calculate the height of an input node.
             int HelperCalculateBinaryTreeHeight(Node helperRoot)
             {
                 //Stops recursion if node is null
@@ -67,20 +72,23 @@ namespace IsBinaryTreeBalanced
                 return highestValue + 1;
             }
 
-
+            //Helper method that will return a bool indicating if a node is balanced.
             bool HelperIsBinaryTreeBalanced(Node helperRootTwo)
             {
                 int leftHeight;
                 int rightHeight;
 
+                //Stops the process if the root is null
                 if (helperRootTwo == null)
                 {
                     return true;
                 }
-              
+                
+                // Calculates the height of the left and right children of input node.
                 leftHeight = HelperCalculateBinaryTreeHeight(helperRootTwo.Left);
                 rightHeight = HelperCalculateBinaryTreeHeight(helperRootTwo.Right);
-                            
+                
+                // Compares if left height and right height are within 1 of eachother and recursively calls to determine if all children and their children meet the same condition returns true if conditions are met.
                 if (
                     Math.Abs(leftHeight - rightHeight) <= 
                     1 && 
@@ -92,15 +100,17 @@ namespace IsBinaryTreeBalanced
                 }
                 return false;
             }
-
+            // Checks to see if tree is empty.
             if (tree.Root == null)
             {
                 return true;
             }
-
+            // Snags the root out of the tree
             Node root = tree.Root;
+
             bool isBalanced;
 
+            // Runs the helper functions
             isBalanced = HelperIsBinaryTreeBalanced(root);
             return isBalanced;
         }
