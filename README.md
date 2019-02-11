@@ -33,6 +33,8 @@
 
 1. [Challenge: Calculate Height and Level of a Binary Tree](Challenges/CalculateHeightAndLevel)
 
+2. [Challenge: Determine if a Binary Tree is Balanced](Challenges/IsBinaryTreeBalanced)
+
 ### Extra Credit Assignments
 
 1. [EC1: Fibonacci Sequence](Challenges/FibNum)
