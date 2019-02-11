@@ -41,3 +41,6 @@ O(n)
 ### FindMaxValue Required Classes
 - BinaryTree class
 - Node class
+
+## Whiteboard
+![whiteboard image](./assets/Whiteboard.jpg)
