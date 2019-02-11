@@ -96,14 +96,15 @@ namespace CalculateHeightAndLevel
         /// <returns></returns>
         public static int CalculateBinaryTreeLevel(BinaryTree tree)
         {
-            //Since tree.Root would have a height of 0 and a level of 1 you just have to add one to the calculated height of a tree.
-            int level = CalculateBinaryTreeHeight(tree) + 1;
-
-            //Handles a empty tree.
             if (tree.Root == null)
             {
                 return 0;
             }
+            //Since tree.Root would have a height of 0 and a level of 1 you just have to add one to the calculated height of a tree.
+            int level = CalculateBinaryTreeHeight(tree) + 1;
+
+            //Handles a empty tree.
+            
             return level;
         }
     }
