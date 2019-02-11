@@ -40,6 +40,7 @@ namespace IsBinaryTreeBalanced
             Console.ReadLine();
         }
 
+        
         public static bool IsBinaryTreeBalanced(BinaryTree tree)
         {
             int HelperCalculateBinaryTreeHeight(Node helperRoot)
