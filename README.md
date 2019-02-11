@@ -35,5 +35,5 @@
 
 1. [EC1: Fibonacci Sequence](Challenges/FibNum)
 
-1. [EC2: Compare Leaves](Challenges/CompareLeaves)
+1. [EC2: Compare Leaves](Challenges/CompareLeafs)
 
