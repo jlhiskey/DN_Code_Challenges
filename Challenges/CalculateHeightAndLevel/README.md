@@ -43,4 +43,4 @@ O(n)
 - Node class
 
 ## Whiteboard
-![whiteboard image](./assets/Whiteboard.jpg)
+![whiteboard image](./assets/Whitboard.jpg)

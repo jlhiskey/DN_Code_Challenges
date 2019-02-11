@@ -26,8 +26,6 @@ namespace IsBinaryTreeBalanced
             testTreeTwo.Root.Left.Left = new Node(0);
             testTreeTwo.Root.Right.Right = new Node(0);
             testTreeTwo.Root.Left.Left.Right = new Node(0);
-            testTreeTwo.Root.Left.Left.Right.Left = new Node(0);
-            testTreeTwo.Root.Left.Left.Right.Right = new Node(0);
 
             Console.WriteLine($"Tree Balanced = {IsBinaryTreeBalanced(testTreeTwo)}.");
             Console.WriteLine();
@@ -44,13 +42,6 @@ namespace IsBinaryTreeBalanced
 
         public static bool IsBinaryTreeBalanced(BinaryTree tree)
         {
-            int leftHeight = 0;
-            int rightHeight = 0;
-            if (tree.Root == null)
-            {
-                return true;
-            }
-            
             int HelperCalculateBinaryTreeHeight(Node helperRoot)
             {
                 //Stops recursion if node is null
@@ -75,20 +66,42 @@ namespace IsBinaryTreeBalanced
                 return highestValue + 1;
             }
 
-            if (tree.Root.Left != null)
-            {
-                leftHeight = HelperCalculateBinaryTreeHeight(tree.Root.Left);
-            }
-            if (tree.Root.Right != null)
-            {
-                rightHeight = HelperCalculateBinaryTreeHeight(tree.Root.Right);
-            }
 
-            if (leftHeight - rightHeight > 1 || rightHeight - leftHeight > 1)
+            bool HelperIsBinaryTreeBalanced(Node helperRootTwo)
             {
+                int leftHeight;
+                int rightHeight;
+
+                if (helperRootTwo == null)
+                {
+                    return true;
+                }
+              
+                leftHeight = HelperCalculateBinaryTreeHeight(helperRootTwo.Left);
+                rightHeight = HelperCalculateBinaryTreeHeight(helperRootTwo.Right);
+                            
+                if (
+                    Math.Abs(leftHeight - rightHeight) <= 
+                    1 && 
+                    HelperIsBinaryTreeBalanced(helperRootTwo.Left) && 
+                    HelperIsBinaryTreeBalanced(helperRootTwo.Right)
+                    )
+                {
+                    return true;
+                }
                 return false;
             }
-            return true;
+
+            if (tree.Root == null)
+            {
+                return true;
+            }
+
+            Node root = tree.Root;
+            bool isBalanced;
+
+            isBalanced = HelperIsBinaryTreeBalanced(root);
+            return isBalanced;
         }
 
     }
