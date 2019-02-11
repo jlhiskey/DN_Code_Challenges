@@ -15,6 +15,8 @@ namespace CalculateHeightAndLevel
             testTreeOne.Root.Right = new Node(0);
 
             Console.WriteLine($"Tree Height = {CalculateBinaryTreeHeight(testTreeOne)}.");
+            Console.WriteLine($"Tree Level = {CalculateBinaryTreeLevel(testTreeOne)}.");
+            Console.WriteLine();
 
             Console.WriteLine("Whiteboard Test Two");
 
@@ -27,12 +29,16 @@ namespace CalculateHeightAndLevel
             testTreeTwo.Root.Left.Left.Right = new Node(0);
 
             Console.WriteLine($"Tree Height = {CalculateBinaryTreeHeight(testTreeTwo)}.");
+            Console.WriteLine($"Tree Level = {CalculateBinaryTreeLevel(testTreeTwo)}.");
+            Console.WriteLine();
 
             Console.WriteLine("Whiteboard Test Three");
 
             BinaryTree testTreeThree = new BinaryTree();
 
             Console.WriteLine($"Tree Height = {CalculateBinaryTreeHeight(testTreeThree)}.");
+            Console.WriteLine($"Tree Level = {CalculateBinaryTreeLevel(testTreeThree)}.");
+            Console.WriteLine();
 
             Console.ReadLine();
         }
@@ -66,14 +72,39 @@ namespace CalculateHeightAndLevel
                     return 0;
                 }
 
+                //Collects Left and Right Height Values
                 int leftChildHeight = HelperCalculateBinaryTreeHeight(helperRoot.Left);
                 int rightChildHeight = HelperCalculateBinaryTreeHeight(helperRoot.Right);
 
+                //Collects highest height found.
                 int highestValue = Math.Max(leftChildHeight, rightChildHeight);
+
+                //Returns actual highest value
                 return highestValue + 1;
             }
+            //Calls helper
             height = HelperCalculateBinaryTreeHeight(root);
+
+            //Returns height
             return height;
+        }
+
+        /// <summary>
+        /// Inputs a binary tree and returns an integer indicating height of input tree.
+        /// </summary>
+        /// <param name="tree"></param>
+        /// <returns></returns>
+        public static int CalculateBinaryTreeLevel(BinaryTree tree)
+        {
+            //Since tree.Root would have a height of 0 and a level of 1 you just have to add one to the calculated height of a tree.
+            int level = CalculateBinaryTreeHeight(tree) + 1;
+
+            //Handles a empty tree.
+            if (tree.Root == null)
+            {
+                return 0;
+            }
+            return level;
         }
     }
 }
