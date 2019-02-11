@@ -35,6 +35,8 @@
 
 2. [Challenge: Determine if a Binary Tree is Balanced](Challenges/IsBinaryTreeBalanced)
 
+3. [Challenge: Determine if Characters are Unique in a String](Challenges/AreCharactersUnique)
+
 ### Extra Credit Assignments
 
 1. [EC1: Fibonacci Sequence](Challenges/FibNum)
