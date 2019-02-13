@@ -79,6 +79,32 @@ namespace Hashtable.Classes
            
         }
 
-        
+        public bool Contains(string key)
+        {
+            int index = Hasher(key);
+
+            if (Storage[index] == null)
+            {
+                return false;
+            }
+            if (Storage[index].Key == key)
+            {
+                return true;
+            }
+            else
+            {
+                HashNode currentNode = Storage[index];
+
+                while (currentNode.Key != key && currentNode.Next != null)
+                {
+                    currentNode = currentNode.Next;
+                }
+                if(currentNode.Key == key)
+                {
+                    return true;
+                }
+                return false;    
+            }
+        }
     }
 }
