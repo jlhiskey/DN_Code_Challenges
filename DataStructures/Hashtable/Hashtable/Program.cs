@@ -30,6 +30,7 @@ namespace Hashtable
             testHashTable.Add("Seattle", 98101);
             testHashTable.Add("Renton", 98055);
 
+
             Console.WriteLine();
             Console.WriteLine("Get Method");
             Console.WriteLine();
@@ -56,11 +57,13 @@ namespace Hashtable
             Console.WriteLine("Remove Method");
             Console.WriteLine();
 
+            testHashTable.Remove("Monroe");
             testHashTable.Remove("Pioneer Square");
             testHashTable.Remove("Alki Beach");
             testHashTable.Remove("U District");
             testHashTable.Remove("Seattle");
             testHashTable.Remove("Renton");
+            
 
 
             Console.ReadLine();
