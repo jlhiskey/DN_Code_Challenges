@@ -32,12 +32,16 @@ namespace Hashtable.Classes
             caluculatedValue = caluculatedValue % Container;
 
             int hashKey = Convert.ToInt32(caluculatedValue);
-
+            Console.WriteLine($"Key= {key} Hash Key= {hashKey}");
+            Console.WriteLine();
             return hashKey;
         }
 
         public void Add(string key, object value)
         {
+            Console.WriteLine("Adding Data");
+            Console.WriteLine();
+
             HashNode incoming = new HashNode(key, value);
 
             int index = Hasher(key);
@@ -48,6 +52,7 @@ namespace Hashtable.Classes
             }
             else
             {
+                Console.WriteLine("Collision Detected");
                 HashNode currentNode = Storage[index];
                 while(currentNode.Next != null)
                 {
@@ -56,6 +61,8 @@ namespace Hashtable.Classes
                 currentNode.Next = incoming;
             }
             Size = Size + 1;
+            Console.WriteLine($"Added {key} {value} to Index {index}");
+            Console.WriteLine();
         }
 
         public object Get(string key)
@@ -64,6 +71,7 @@ namespace Hashtable.Classes
             
             if (Storage[index].Key == key)
             {
+                Console.WriteLine($"Your value is {Storage[index].Value}.");
                 return Storage[index].Value;
             }
             else
@@ -72,9 +80,20 @@ namespace Hashtable.Classes
                 
                 while (currentNode.Key != key)
                 {
+                    Console.WriteLine("Accessing Collision Storage");
                     currentNode = currentNode.Next;                    
                 }
-                return currentNode.Value;
+                if (currentNode.Key == key)
+                {
+                    Console.WriteLine($"Your value is {currentNode.Value}.");
+                    return currentNode.Value;
+                }
+
+                else
+                {
+                    Console.WriteLine("Value not found");
+                    return null;
+                }            
             }
            
         }
@@ -85,10 +104,12 @@ namespace Hashtable.Classes
 
             if (Storage[index] == null)
             {
+                Console.WriteLine("Key not found");
                 return false;
             }
             if (Storage[index].Key == key)
             {
+                Console.WriteLine("Key found");
                 return true;
             }
             else
@@ -97,14 +118,59 @@ namespace Hashtable.Classes
 
                 while (currentNode.Key != key && currentNode.Next != null)
                 {
+                    Console.WriteLine("Accessing Collision Storage");
                     currentNode = currentNode.Next;
                 }
                 if(currentNode.Key == key)
                 {
+                    Console.WriteLine("Key found");
                     return true;
                 }
+                Console.WriteLine("Key not found");
                 return false;    
             }
+        }
+
+        public void Remove(string key)
+        {
+            int index = Hasher(key);
+
+            if (Storage[index].Key == key && Storage[index].Next == null)
+            {
+                Console.WriteLine($"Removing {Storage[index].Key} {Storage[index].Value} from hashtable.");
+                Storage[index] = null;
+            }
+            else
+            {
+                
+                if (Storage[index].Key == key && Storage[index].Next != null)
+                {
+                    Console.WriteLine($"Removing {Storage[index].Key} {Storage[index].Value} from hashtable and amending collision storage.");
+                    Storage[index] = Storage[index].Next;
+                }
+                else
+                {
+                    HashNode currentNode = Storage[index];
+
+                    while (currentNode.Next.Key != key && currentNode.Next != null)
+                    {
+                        Console.WriteLine("Accessing Collision Storage");
+                        currentNode = currentNode.Next;
+                    }
+                    if (currentNode.Next.Key == key && currentNode.Next.Next != null)
+                    {
+                        Console.WriteLine($"Removing {currentNode.Next.Key} {currentNode.Next.Value} from hashtable and amending collision storage.");
+                        currentNode.Next = currentNode.Next.Next;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Removing {currentNode.Next.Key} {currentNode.Next.Value} from hashtable and amending collision storage.");
+                        currentNode.Next = null;
+                    }
+                }
+                
+            }
+
         }
     }
 }

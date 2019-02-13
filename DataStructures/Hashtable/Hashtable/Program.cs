@@ -8,14 +8,21 @@ namespace Hashtable
         static void Main(string[] args)
         {
             JLHHashtable testHashTable = new JLHHashtable(5);
-            Console.WriteLine(testHashTable.Hasher("Pioneer Square"));
-            Console.WriteLine(testHashTable.Hasher("Alki Beach"));
-            Console.WriteLine(testHashTable.Hasher("U District"));
-            Console.WriteLine(testHashTable.Hasher("Seattle"));
-            Console.WriteLine(testHashTable.Hasher("Renton"));
-            Console.WriteLine(testHashTable.Hasher("Seatown"));
-            Console.WriteLine(testHashTable.Hasher("Monroe"));
 
+            Console.WriteLine("Hash Key Method");
+            Console.WriteLine();
+
+            testHashTable.Hasher("Pioneer Square");
+            testHashTable.Hasher("Alki Beach");
+            testHashTable.Hasher("U District");
+            testHashTable.Hasher("Seattle");
+            testHashTable.Hasher("Renton");
+            testHashTable.Hasher("Seatown");
+            testHashTable.Hasher("Monroe");
+
+            Console.WriteLine();
+            Console.WriteLine("Add Method");
+            Console.WriteLine();
 
             testHashTable.Add("Pioneer Square", 98104);
             testHashTable.Add("Alki Beach", 98116);
@@ -23,20 +30,37 @@ namespace Hashtable
             testHashTable.Add("Seattle", 98101);
             testHashTable.Add("Renton", 98055);
 
-            Console.WriteLine(testHashTable.Get("Pioneer Square"));
-            Console.WriteLine(testHashTable.Get("Alki Beach"));
-            Console.WriteLine(testHashTable.Get("U District"));
-            Console.WriteLine(testHashTable.Get("Seattle"));
-            Console.WriteLine(testHashTable.Get("Renton"));
+            Console.WriteLine();
+            Console.WriteLine("Get Method");
+            Console.WriteLine();
 
-            Console.WriteLine(testHashTable.Contains("Pioneer Square"));
-            Console.WriteLine(testHashTable.Contains("Alki Beach"));
-            Console.WriteLine(testHashTable.Contains("U District"));
-            Console.WriteLine(testHashTable.Contains("Seattle"));
-            Console.WriteLine(testHashTable.Contains("Renton"));
-            Console.WriteLine(testHashTable.Contains("Seatown"));
-            Console.WriteLine(testHashTable.Contains("Monroe"));
+            testHashTable.Get("Pioneer Square");
+            testHashTable.Get("Alki Beach");
+            testHashTable.Get("U District");
+            testHashTable.Get("Seattle");
+            testHashTable.Get("Renton");
 
+            Console.WriteLine();
+            Console.WriteLine("Contain Method");
+            Console.WriteLine();
+
+            testHashTable.Contains("Pioneer Square");
+            testHashTable.Contains("Alki Beach");
+            testHashTable.Contains("U District");
+            testHashTable.Contains("Seattle");
+            testHashTable.Contains("Renton");
+            testHashTable.Contains("Seatown");
+            testHashTable.Contains("Monroe");
+
+            Console.WriteLine();
+            Console.WriteLine("Remove Method");
+            Console.WriteLine();
+
+            testHashTable.Remove("Pioneer Square");
+            testHashTable.Remove("Alki Beach");
+            testHashTable.Remove("U District");
+            testHashTable.Remove("Seattle");
+            testHashTable.Remove("Renton");
 
 
             Console.ReadLine();
