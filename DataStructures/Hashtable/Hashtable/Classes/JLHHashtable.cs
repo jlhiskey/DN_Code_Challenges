@@ -15,9 +15,10 @@ namespace Hashtable.Classes
         {
             Container = container;
             HashNode[] temp = new HashNode[Container];
+            Storage = temp;
         }
 
-        public long Hasher(string key)
+        public int Hasher(string key)
         {
             long caluculatedValue = 0;
             for (int i = 0; i < key.Length; i++)
@@ -32,7 +33,27 @@ namespace Hashtable.Classes
 
             int hashKey = Convert.ToInt32(caluculatedValue);
 
-            return caluculatedValue;
+            return hashKey;
+        }
+
+        public void Add(string key, object value)
+        {
+            HashNode incoming = new HashNode(key, value);
+
+            int index = Hasher(key);
+            if (Storage[index] == null)
+            {
+                Storage[index] = incoming;
+            }
+            else
+            {
+                HashNode currentNode = Storage[index];
+                while(currentNode.Next != null)
+                {
+                    currentNode = currentNode.Next;
+                }
+                currentNode.Next = incoming;
+            }
         }
     }
 }
