@@ -20,6 +20,12 @@ namespace Hashtable
             testHashTable.Add("Seattle", 98101);
             testHashTable.Add("Renton", 98055);
 
+            //HashNode pioneerSquare = testHashTable.Get("Pioneer Square");
+            //HashNode alkiBeach = testHashTable.Get("Alki Beach");
+            var uDistrict = testHashTable.Get("U District");
+            var seattle = testHashTable.Get("Seattle");
+            //HashNode renton = testHashTable.Get("Renton");
+
 
             Console.ReadLine();
         }

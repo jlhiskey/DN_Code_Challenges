@@ -41,6 +41,7 @@ namespace Hashtable.Classes
             HashNode incoming = new HashNode(key, value);
 
             int index = Hasher(key);
+
             if (Storage[index] == null)
             {
                 Storage[index] = incoming;
@@ -54,6 +55,29 @@ namespace Hashtable.Classes
                 }
                 currentNode.Next = incoming;
             }
+        }
+
+        public object Get(string key)
+        {
+            int index = Hasher(key);
+            HashNode outgoing = new HashNode("null", "null");
+            string targetKey = Storage[index].Key;
+            if (targetKey == key)
+            {
+                outgoing = Storage[index];
+            }
+            else
+            {
+                HashNode currentNode = Storage[index];
+                targetKey = currentNode.Key;
+                while (targetKey != key)
+                {
+                    currentNode = currentNode.Next;
+                    targetKey = currentNode.Key;
+                }
+                outgoing = currentNode;
+            }
+            return outgoing.Value;
         }
     }
 }
