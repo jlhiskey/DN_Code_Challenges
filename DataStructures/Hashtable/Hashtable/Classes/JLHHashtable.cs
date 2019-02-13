@@ -55,29 +55,30 @@ namespace Hashtable.Classes
                 }
                 currentNode.Next = incoming;
             }
+            Size = Size + 1;
         }
 
         public object Get(string key)
         {
             int index = Hasher(key);
-            HashNode outgoing = new HashNode("null", "null");
-            string targetKey = Storage[index].Key;
-            if (targetKey == key)
+            
+            if (Storage[index].Key == key)
             {
-                outgoing = Storage[index];
+                return Storage[index].Value;
             }
             else
             {
-                HashNode currentNode = Storage[index];
-                targetKey = currentNode.Key;
-                while (targetKey != key)
+                HashNode currentNode = Storage[index]; 
+                
+                while (currentNode.Key != key)
                 {
-                    currentNode = currentNode.Next;
-                    targetKey = currentNode.Key;
+                    currentNode = currentNode.Next;                    
                 }
-                outgoing = currentNode;
+                return currentNode.Value;
             }
-            return outgoing.Value;
+           
         }
+
+        
     }
 }
