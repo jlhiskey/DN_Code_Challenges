@@ -7,9 +7,9 @@ namespace HashtableTestSuite
     public class HashtableTestSuite
     {
         //Added seeded Hashtable builder for use in GET, CONTAIN and DELETE test suites.
-        public static JLHHashtable BuildHashTable()
+        public static HashTable BuildHashTable()
         {
-            JLHHashtable testHashTable = new JLHHashtable(5);
+            HashTable testHashTable = new HashTable(5);
             testHashTable.Add("Pioneer Square", 98104);
             testHashTable.Add("Alki Beach", 98116);
             testHashTable.Add("U District", 98105);
@@ -19,7 +19,7 @@ namespace HashtableTestSuite
 
         public class HasherTestSuite
         {
-            JLHHashtable testHashTable = new JLHHashtable(5);
+            HashTable testHashTable = new HashTable(5);
             [Fact]
             public void TestingHasherOne()
             {
@@ -42,7 +42,7 @@ namespace HashtableTestSuite
 
         public class AddTestSuite
         {
-            JLHHashtable testHashTable = new JLHHashtable(5);
+            HashTable testHashTable = new HashTable(5);
 
             [Fact]
             public void TestingAddOne()
@@ -74,7 +74,7 @@ namespace HashtableTestSuite
 
         public class GetTestSuite
         {
-            JLHHashtable testHashTable = BuildHashTable();
+            HashTable testHashTable = BuildHashTable();
 
             [Fact]
             public void TestingGet()
@@ -104,7 +104,7 @@ namespace HashtableTestSuite
 
         public class ContainsTestSuite
         {
-            JLHHashtable testHashTable = BuildHashTable();
+            HashTable testHashTable = BuildHashTable();
 
             [Fact]
             public void TestingContains()
@@ -134,7 +134,7 @@ namespace HashtableTestSuite
         public class RemoveTestSuite
         {
 
-            JLHHashtable testHashTable = BuildHashTable();
+            HashTable testHashTable = BuildHashTable();
 
             [Fact]
             public void TestingRemove()

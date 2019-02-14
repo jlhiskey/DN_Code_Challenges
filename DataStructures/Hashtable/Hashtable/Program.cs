@@ -7,9 +7,9 @@ namespace Hashtable
     {
         static void Main(string[] args)
         {
-            JLHHashtable testHashTable = new JLHHashtable(5);
+            HashTable testHashTable = new HashTable(5);
 
-            Console.WriteLine("Hash Key Method");
+            Console.WriteLine("Hash Key Method---------------------------------------------------------------------------------------------------------");
             Console.WriteLine();
 
             testHashTable.Hasher("Pioneer Square");
@@ -21,7 +21,7 @@ namespace Hashtable
             testHashTable.Hasher("Monroe");
 
             Console.WriteLine();
-            Console.WriteLine("Add Method");
+            Console.WriteLine("Add Method---------------------------------------------------------------------------------------------------------");
             Console.WriteLine();
 
             testHashTable.Add("Pioneer Square", 98104);
@@ -32,7 +32,7 @@ namespace Hashtable
 
 
             Console.WriteLine();
-            Console.WriteLine("Get Method");
+            Console.WriteLine("Get Method---------------------------------------------------------------------------------------------------------");
             Console.WriteLine();
 
             testHashTable.Get("Pioneer Square");
@@ -42,7 +42,7 @@ namespace Hashtable
             testHashTable.Get("Renton");
 
             Console.WriteLine();
-            Console.WriteLine("Contain Method");
+            Console.WriteLine("Contain Method---------------------------------------------------------------------------------------------------------");
             Console.WriteLine();
 
             testHashTable.Contains("Pioneer Square");
@@ -54,7 +54,7 @@ namespace Hashtable
             testHashTable.Contains("Monroe");
 
             Console.WriteLine();
-            Console.WriteLine("Remove Method");
+            Console.WriteLine("Remove Method---------------------------------------------------------------------------------------------------------");
             Console.WriteLine();
 
             testHashTable.Remove("Monroe");
