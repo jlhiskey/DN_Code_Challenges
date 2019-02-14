@@ -1,5 +1,5 @@
 
-# Lab 05: Linked Lists
+# Hash Tables
  - Implement a Hashtable
 ## Challenge
 Implement a Hashtable with the following methods:
