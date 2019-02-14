@@ -184,6 +184,7 @@ namespace Hashtable.Classes
                 {
                     Console.WriteLine($"Removing {Storage[index].Key} {Storage[index].Value} from hashtable.");
                     Storage[index] = null;
+                    Size = Size - 1;
                 }
                 else
                 {
@@ -191,6 +192,7 @@ namespace Hashtable.Classes
                     {
                         Console.WriteLine($"Removing {Storage[index].Key} {Storage[index].Value} from hashtable and amending collision storage.");
                         Storage[index] = Storage[index].Next;
+                        Size = Size - 1;
                     }
                     else
                     {
@@ -206,11 +208,13 @@ namespace Hashtable.Classes
                         {
                             Console.WriteLine($"Removing {currentNode.Next.Key} {currentNode.Next.Value} from hashtable and amending collision storage.");
                             currentNode.Next = currentNode.Next.Next;
+                            Size = Size - 1;
                         }
                         else
                         {
                             Console.WriteLine($"Removing {currentNode.Next.Key} {currentNode.Next.Value} from hashtable and amending collision storage.");
                             currentNode.Next = null;
+                            Size = Size - 1;
                         }
                     }
                 }
