@@ -5,19 +5,40 @@ using Hashtable.Classes;
 
 namespace Hashtable.Classes
 {
-    public class JLHHashtable
+    /// <summary>
+    /// Homemade Hashtable that contains .Hasher, .Add, .Get, .Contains, .Remove capablities. Hashtable buckets must be specified and will not resize. Collision handling is enabled to allow for unlimited additions.
+    /// </summary>
+    public class HashTable
     {
-        public int Container { get; set; }
+        /// <summary>
+        /// Bucket Population
+        /// </summary>
+        public int TotalBuckets { get; set; }
+        /// <summary>
+        /// Data Population
+        /// </summary>
         public int Size { get; set; }
+        /// <summary>
+        /// Data Container
+        /// </summary>
         public HashNode[] Storage { get; set; }
 
-        public JLHHashtable(int container)
+        /// <summary>
+        /// HashTable Constructor function that requires an integer input designating how many buckets HashTable will contain.
+        /// </summary>
+        /// <param name="totalBuckets"></param>
+        public HashTable(int totalBuckets)
         {
-            Container = container;
-            HashNode[] temp = new HashNode[Container];
+            TotalBuckets = totalBuckets;
+            HashNode[] temp = new HashNode[TotalBuckets];
             Storage = temp;
         }
 
+        /// <summary>
+        /// Receives a string input and returns an integer value indicating which index key has mapped to. Uses ASCII sum of string characters * 699 % TotalBuckets to acheive hash.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public int Hasher(string key)
         {
             Console.WriteLine();
@@ -31,7 +52,7 @@ namespace Hashtable.Classes
                         
             }
             caluculatedValue = caluculatedValue * 699;
-            caluculatedValue = caluculatedValue % Container;
+            caluculatedValue = caluculatedValue % TotalBuckets;
 
             int hashKey = Convert.ToInt32(caluculatedValue);
             Console.WriteLine($"Key= {key} Hash Key= {hashKey}");
@@ -41,6 +62,11 @@ namespace Hashtable.Classes
             return hashKey;
         }
 
+        /// <summary>
+        /// Receives a string key and a object value and adds them to HashTable if unique. Adds to collision data structure if collision is found.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public void Add(string key, object value)
         {
             Console.WriteLine();
@@ -54,8 +80,6 @@ namespace Hashtable.Classes
             }
             else
             {
-                
-
                 HashNode incoming = new HashNode(key, value);
 
                 int index = Hasher(key);
@@ -81,6 +105,11 @@ namespace Hashtable.Classes
             
         }
 
+        /// <summary>
+        /// Checks to see if HashTable contains string key value and returns object value if found. Will enter collision data structure to find value if collision is encountered.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>Object value</returns>
         public object Get(string key)
         {
             Console.WriteLine();
@@ -120,6 +149,11 @@ namespace Hashtable.Classes
             
         }
 
+        /// <summary>
+        /// Checks HashTable to see if a HashNode within the HashTable including collision data structure contains input string key returns a boolean 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>bool keyFound</returns>
         public bool Contains(string key)
         {
             Console.WriteLine();
@@ -167,6 +201,10 @@ namespace Hashtable.Classes
             }
         }
 
+        /// <summary>
+        /// Checks to see if HashTable including collision data structure contains input string key and removes HashNode that matches key. 
+        /// </summary>
+        /// <param name="key"></param>
         public void Remove(string key)
         {
             Console.WriteLine("Removing Data---------------------------");
