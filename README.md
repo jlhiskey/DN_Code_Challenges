@@ -29,6 +29,8 @@
 
 13. [Challenge: Find Max Value](Challenges/FindMaxValue)
 
+13. [Implementation: Hash Table](DataStructures/Hashtable)
+
 ### Snow Day Assignments
 
 1. [Challenge: Calculate Height and Level of a Binary Tree](Challenges/CalculateHeightAndLevel)
