@@ -29,7 +29,9 @@
 
 13. [Challenge: Find Max Value](Challenges/FindMaxValue)
 
-13. [Implementation: Hash Table](DataStructures/Hashtable)
+14. [Implementation: Hash Table](DataStructures/Hashtable)
+
+15. [Challenge: Insertion Sort](Challenges/InsertionSort)
 
 ### Snow Day Assignments
 
