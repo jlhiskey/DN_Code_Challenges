@@ -31,7 +31,7 @@
 
 14. [Implementation: Hash Table](DataStructures/Hashtable)
 
-15. [Challenge: Insertion Sort](Challenges/InsertionSort)
+15. [Implementation: Insertion Sort](Challenges/InsertionSort)
 
 ### Snow Day Assignments
 
