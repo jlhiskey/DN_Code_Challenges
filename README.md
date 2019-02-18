@@ -33,6 +33,8 @@
 
 15. [Implementation: Insertion Sort](Challenges/InsertionSort)
 
+16. [Challenge: Find First Repeated Word](Challenges/RepeatedWord)
+
 ### Snow Day Assignments
 
 1. [Challenge: Calculate Height and Level of a Binary Tree](Challenges/CalculateHeightAndLevel)
