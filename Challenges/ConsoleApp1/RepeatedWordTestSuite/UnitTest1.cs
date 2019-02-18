@@ -21,7 +21,7 @@ namespace RepeatedWordTestSuite
         [Fact]
         public void Test3()
         {
-            Assert.Equal("no repeated words", Program.RepeatedWord("Today is monday."));
+            Assert.Equal("no repeated words", Program.RepeatedWord("Today is Monday."));
         }
     }
 }

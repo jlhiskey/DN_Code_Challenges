@@ -7,7 +7,11 @@ namespace RepeatedWord
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            RepeatedWord("A volcano is a volcano.");
+            RepeatedWord("When is the Party? What party?");
+            RepeatedWord("Today is Monday.");
+
+            Console.ReadLine();
         }
 
         /// <summary>
@@ -32,6 +36,7 @@ namespace RepeatedWord
                 // If the hashtable already contains index then return index
                 if (recordedWords.Contains(words[i]))
                 {
+                    Console.WriteLine($"The first repeated word is:   {words[i]}   --------------------------------------------");
                     return words[i];
                 }
                 // Adds index to hashtable
@@ -39,6 +44,7 @@ namespace RepeatedWord
             }
 
             // Return if no repeats are found.
+            Console.WriteLine("No repeated words found --------------------------------------------");
             return "no repeated words";
         }
     }    
