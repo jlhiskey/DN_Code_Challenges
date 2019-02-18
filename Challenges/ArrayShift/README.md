@@ -21,3 +21,4 @@ O(n)
 ![whiteboard image](./Assets/Whiteboard.jpg)
 ## Solution
 ![solution image](./Assets/Solution.PNG)
+- Whiteboard Author: Tyler Hood 
