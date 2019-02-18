@@ -41,8 +41,6 @@
 
 3. [Challenge: Determine if Characters are Unique in a String](Challenges/AreCharactersUnique)
 
-4. [Challenge: Check If Two Binary Tree Values Have an Ancestral Relationship INCOMPLETE](Challenges/IsAncestor)
-
 ### Extra Credit Assignments
 
 1. [EC1: Fibonacci Sequence](Challenges/FibNum)
