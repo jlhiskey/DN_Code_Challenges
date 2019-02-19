@@ -11,23 +11,55 @@ namespace TreeIntersection
         {
             
         }
-    }
 
-    public List<int> TreeIntersection(BinaryTree treeOne, BinaryTree treeTwo)
-    {
-        HashTable visitedValues = new HashTable(20);
-        List<int> commonValues = new List<int>();
-
-        void TraversalOne(Node root)
+        /// <summary>
+        /// Takes in two trees and returns of list of common values between both trees.
+        /// </summary>
+        /// <param name="treeOne"></param>
+        /// <param name="treeTwo"></param>
+        /// <returns>List<int> commonValues</int></returns>
+        public static List<int> TreeIntersection(BinaryTree treeOne, BinaryTree treeTwo)
         {
-            if (root == null)
-            {
-                return;
+
+            List<int> commonValues = new List<int>();
+            HashTable visitedValues = new HashTable(20);
+
+            // Traverses first tree and adds values to hashmap.
+            void TraversalOne(Node root)
+            {  
+                if (root == null)
+                {
+                    return;
+                }
+
+                visitedValues.Add(root.Value.ToString(), null);
+                TraversalOne(root.Left);
+                TraversalOne(root.Right);
             }
 
-            visitedValues.Add(root.Value.ToString(), null);
+            // Traverses second tree and adds values to list if value is contained within hashmap.
+            void TraversalTwo(Node root)
+            {
+                if (root == null)
+                {
+                    return;
+                }
+                if (visitedValues.Contains(root.Value.ToString()))
+                {
+                    commonValues.Add(root.Value);
+                }
+                TraversalTwo(root.Left);
+                TraversalTwo(root.Right);
+            }
 
+            // Fires both recursive methods.
+            TraversalOne(treeOne.Root);
+            TraversalTwo(treeTwo.Root);
 
+            // Returns list of common values.
+            return commonValues;
         }
     }
+
+    
 }
