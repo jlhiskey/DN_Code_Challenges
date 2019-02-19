@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Hashtable">
+      <HintPath>..\..\..\DataStructures\Hashtable\Hashtable\obj\Debug\netcoreapp2.2\Hashtable.dll</HintPath>
+    </Reference>
+    <Reference Include="Tree">
+      <HintPath>..\..\..\DataStructures\Tree\Tree\bin\Debug\netcoreapp2.1\Tree.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
