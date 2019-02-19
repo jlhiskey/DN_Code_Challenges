@@ -34,6 +34,8 @@ O(n)
 ## API
 ### method TreeIntersection Required Classes
 
+- HashTable class
+- HashNode class
 - BinaryTree class
 - Node class
 
