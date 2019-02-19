@@ -9,7 +9,26 @@ namespace TreeIntersection
     {
         static void Main(string[] args)
         {
-            
+
+            BinaryTree testTreeOne = new BinaryTree();
+            testTreeOne.Root = new Node(1);
+            testTreeOne.Root.Left = new Node(2);
+            testTreeOne.Root.Right = new Node(3);
+
+            BinaryTree testTreeTwo = new BinaryTree();
+            testTreeTwo.Root = new Node(4);
+            testTreeTwo.Root.Left = new Node(1);
+            testTreeTwo.Root.Right = new Node(2);
+
+            List<int> values = Program.TreeIntersection(testTreeOne, testTreeTwo);
+
+            Console.WriteLine("Common Values");
+            foreach (int value in values)
+            {
+                Console.WriteLine($"Value = {value}");
+            }
+
+            Console.ReadLine();
         }
 
         /// <summary>
