@@ -1,11 +1,12 @@
 
-# Code Challenge 26: Find First Repeated Word
- - Find the first repeated word in a book.
+# Code Challenge 27: Tree Intersection
+ - Find common values in 2 binary trees.
 ## Challenge
 - Write a function that accepts a lengthy string parameter.
 - Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
 ### Structure and Testing
-- Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
+- Write a function called tree_intersection that takes two binary tree parameters.
+Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
 
 - Write at least three test assertions for each method that you define.
 
@@ -13,25 +14,28 @@
 
 ## Approach & Efficiency
 ### Approach
-- I created the method string RepeatedWord(string book)
-  - I then created a char[] called delimiters and added all common delimiters between words.
-  - I then split the input book into an array of words using the delimeters char array as split criteria.
-  - I then created a hashtable called recordedWords with total number of buckets equal to total number of words in the words array. (Trying to reduce collisions)
-  - I then created a for loop that interates through the word array.
-    - If recordedWords HashTable contains words[i] the method returns words[i].
-    - Else I add words[i] to recordedWords HashTable.
-  - I then added a return at the end of the method that says "no repeated words" to handle no repeated words being found.
-    
+- I created the method TreeIntersection()
+  - Inputs: 2 BinaryTrees: treeOne and treeTwo
+  - Output: List of integer values.
+  - First I created a new int list called commonValues which will eventually hold common values found between both trees.
+  - I then created a HashTable called visitedValues that will eventually store all of treeOne's values.
+  - I then created a helper method called TraversalOne which takes in a Node root and will conduct a depth first traversal and as it touches nodes it will add that nodes value to the HashTable visitedValues in pre-order.
+  - I then created another helper method called TraversalTwo which takes in a Node root and will conduct a depth first traversal and as it touches nodes it will check to see if that nodes value in found within the Hashtable visitedValues and if found it will add that nodes value to the list commonValues in pre-order.
+  - I then call TraversalOne using treeOne.Root as the Node.
+  - I then call TraversalTwo using treeTwo.Root as the Node.
+  - I then return the list commonValues
+   
 ### Efficiency
 #### Space
-O(n)
+O(h)
 #### Time
 O(n)
 
 ## API
-### method RepeatedWord Required Classes
+### method TreeIntersection Required Classes
 
-- HashTable and HashNode classes are required.
+- BinaryTree class
+- Node class
 
 ## Whiteboard
 ![whiteboard image](./assets/Whiteboard.jpg)

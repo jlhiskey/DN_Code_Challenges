@@ -35,6 +35,8 @@
 
 16. [Challenge: Find First Repeated Word](Challenges/RepeatedWord)
 
+16. [Challenge: Tree Intersection](Challenges/TreeIntersection)
+
 ### Snow Day Assignments
 
 1. [Challenge: Calculate Height and Level of a Binary Tree](Challenges/CalculateHeightAndLevel)
