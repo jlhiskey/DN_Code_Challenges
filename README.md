@@ -37,6 +37,8 @@
 
 16. [Challenge: Tree Intersection](Challenges/TreeIntersection)
 
+17. [Challenge: Left Join](Challenges/LeftJoin)
+
 ### Snow Day Assignments
 
 1. [Challenge: Calculate Height and Level of a Binary Tree](Challenges/CalculateHeightAndLevel)
