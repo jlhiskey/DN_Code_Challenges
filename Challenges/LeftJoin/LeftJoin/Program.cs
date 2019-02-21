@@ -8,7 +8,26 @@ namespace LeftJoin
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            HashTable left = new HashTable(50);
+            left.Add("Bob", "First");
+            left.Add("Frank", "First");
+            left.Add("JimBob", "Crab Cakes");
+            left.Add("Wu", "Tang");
+
+            HashTable right = new HashTable(5);
+            right.Add("Bob", "Second");
+            right.Add("Jim", "Second");
+            right.Add("JimBob", "Are Tasty");
+            right.Add("Wu", "Clan");
+
+            List<string> joinData = Program.LeftJoin(left, right);
+
+            foreach (string join in joinData)
+            {
+                Console.WriteLine(join);
+            }
+
+            Console.ReadLine();
         }
 
         /// <summary>
