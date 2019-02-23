@@ -7,13 +7,19 @@ namespace Graph
     public class Graph
     {
 
-        //Size
+        /// <summary>
+        /// Number of Vertices in Graph
+        /// </summary>
         public int Size { get; set; }
 
-        //AdjacencyList
+        /// <summary>
+        /// Dictionary that is actually holding the verticies and edges
+        /// </summary>
         public Dictionary<Vertex, LinkedList<Edge>> _AdjacencyList { get; set; }
 
-        //Constructor
+        /// <summary>
+        /// Graph constructor that builds AdjacenyList and sets Size of graph to 0.
+        /// </summary>
         public Graph()
         {
             Dictionary<Vertex, LinkedList<Edge>> adjacencyList = new Dictionary<Vertex, LinkedList<Edge>>();
@@ -21,15 +27,24 @@ namespace Graph
             Size = 0;
         }
 
-        //Add Vertex
+        /// <summary>
+        /// Accepts a Vertex as an input creates a new empty LinkedList neighbors that will keep track of the new Vertex's neighbors and adds new Vertex and LinkedList to graph.
+        /// </summary>
+        /// <param name="vertex"></param>
         public void AddVertex(Vertex vertex)
         {
+
             LinkedList<Edge> neighbors = new LinkedList<Edge>();
             _AdjacencyList.Add(vertex, neighbors);
             Size = Size + 1;
         }
 
-        //Add Edge
+        /// <summary>
+        /// Accepts Vertex startVertex, Vertex endVertex and optionally an int weight. Checks to see if graph contains both vertices then adds connection between vertices in Vertex startVertex Linked List neighbors.
+        /// </summary>
+        /// <param name="startVertex"></param>
+        /// <param name="endVertex"></param>
+        /// <param name="weight"></param>
         public void AddEdge(Vertex startVertex, Vertex endVertex, int weight = 0)
         {
             if(!_AdjacencyList.ContainsKey(startVertex) || !_AdjacencyList.ContainsKey(endVertex))
@@ -47,7 +62,10 @@ namespace Graph
             _AdjacencyList[startVertex] = neighbors;
         }
 
-        //GetVerticies
+        /// <summary>
+        /// Checks to see if there are Verticies in the graph. If yes will return a List<Vertex>AllVertices</Vertex> else it will return null.
+        /// </summary>
+        /// <returns>If graph has Verticies then it returns a List of all Vertex in graph else it returns null.</returns>
         public List<Vertex> GetVertices()
         {
             if(Size > 0)
@@ -57,7 +75,11 @@ namespace Graph
             return null;
         }
 
-        //GetNeighbors
+        /// <summary>
+        /// Accepts a Vertex as input and checks to see if Vertex exists in graph. If it does then a List of Edges is returned. Else an exception is thrown.
+        /// </summary>
+        /// <param name="vertex"></param>
+        /// <returns>If the Vertex exists in graph then a List of that Vertex's edges in returned else an exeption is thrown.</returns>
         public List<Edge> GetNeighbors(Vertex vertex)
         {
             if (!_AdjacencyList.ContainsKey(vertex))
@@ -70,7 +92,10 @@ namespace Graph
             return neighbors.ToList();      
         }
 
-        //GetSize
+        /// <summary>
+        /// Accesses the Graphs Size property and returns int value indicating how many Verticies exist in Graph.
+        /// </summary>
+        /// <returns>int value indicating how many Verticies exist in Graph.</returns>
         public int GetSize()
         {
             return Size;

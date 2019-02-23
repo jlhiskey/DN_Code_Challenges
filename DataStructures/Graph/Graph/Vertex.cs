@@ -6,10 +6,15 @@ namespace Graph
 {
     public class Vertex
     {
-        //Value
+        /// <summary>
+        /// Generic payload of Vertex
+        /// </summary>
         public object Value { get; set; }
 
-        //Constructor
+        /// <summary>
+        /// Accepts a generic input value and sets Value of new Vertex to that value.
+        /// </summary>
+        /// <param name="value"></param>
         public Vertex(object value)
         {
             Value = value;
