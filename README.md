@@ -65,5 +65,7 @@
 
 1. [EC1: Fibonacci Sequence](Challenges/FibNum)
 
-1. [EC2: Compare Leaves](Challenges/CompareLeafs)
+2. [EC2: Compare Leaves](Challenges/CompareLeafs)
+
+3. [EC3: Most Common Word](Challenges/MostCommonWord)
 
