@@ -8,7 +8,7 @@ namespace Graph
     {
         //Vertex
         public Vertex Vertex { get; set; }
-        
+
         //Weight
         public int Weight { get; set; }
 
