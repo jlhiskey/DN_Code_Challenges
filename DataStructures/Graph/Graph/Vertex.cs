@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Graph
 {
+    /// <summary>
+    /// Payload of Graph
+    /// </summary>
     public class Vertex
     {
         /// <summary>

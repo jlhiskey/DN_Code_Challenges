@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Graph
 {
+    /// <summary>
+    /// Connection between Verticies
+    /// </summary>
     public class Edge
     {
         /// <summary>

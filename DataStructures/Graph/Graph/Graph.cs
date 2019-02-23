@@ -31,12 +31,13 @@ namespace Graph
         /// Accepts a Vertex as an input creates a new empty LinkedList neighbors that will keep track of the new Vertex's neighbors and adds new Vertex and LinkedList to graph.
         /// </summary>
         /// <param name="vertex"></param>
-        public void AddVertex(Vertex vertex)
+        public Vertex AddVertex(Vertex vertex)
         {
 
             LinkedList<Edge> neighbors = new LinkedList<Edge>();
             _AdjacencyList.Add(vertex, neighbors);
             Size = Size + 1;
+            return vertex;
         }
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Graph
         /// Checks to see if there are Verticies in the graph. If yes will return a List<Vertex>AllVertices</Vertex> else it will return null.
         /// </summary>
         /// <returns>If graph has Verticies then it returns a List of all Vertex in graph else it returns null.</returns>
-        public List<Vertex> GetVertices()
+        public List<Vertex> GetVerticies()
         {
             if(Size > 0)
             {

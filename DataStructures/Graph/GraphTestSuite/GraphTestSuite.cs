@@ -19,7 +19,7 @@ namespace GraphTestSuite
             List<Vertex> expected = new List<Vertex>();
             expected.Add(newVertex);
 
-            List<Vertex> actual = graph.GetVertices();
+            List<Vertex> actual = graph.GetVerticies();
 
             Assert.Equal(expected, actual);
         }
@@ -67,7 +67,7 @@ namespace GraphTestSuite
             expected.Add(vertexOne);
             expected.Add(vertexTwo);
 
-            List<Vertex> actual = graph.GetVertices();
+            List<Vertex> actual = graph.GetVerticies();
 
             Assert.Equal(expected, actual);
 
@@ -192,7 +192,7 @@ namespace GraphTestSuite
         {
             Graph.Graph graph = new Graph.Graph();
 
-            Assert.Null(graph.GetVertices());
+            Assert.Null(graph.GetVerticies());
         }
     }
 }
