@@ -21,6 +21,11 @@ namespace Graph
         }
 
         //Add Vertex
+        public void AddVertex(Vertex vertex)
+        {
+            LinkedList<Edge> neighbors = new LinkedList<Edge>();
+            _AdjacencyList.Add(vertex, neighbors);
+        }
 
         //Add Edge
 
