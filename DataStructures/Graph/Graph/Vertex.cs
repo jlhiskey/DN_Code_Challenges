@@ -4,10 +4,15 @@ using System.Text;
 
 namespace Graph
 {
-    class Vertex
+    public class Vertex
     {
         //Value
+        public object Value { get; set; }
 
         //Constructor
+        public Vertex(object value)
+        {
+            Value = value;
+        }
     }
 }
