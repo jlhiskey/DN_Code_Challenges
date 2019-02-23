@@ -1,43 +1,55 @@
 
-# Data Structures and Algorithms
+# Data Structures and Algorithms C#
 
 ## Table of Contents
+
+### Challenges
 
 1. [Challenge: Insert and shift an array](Challenges/ArrayShift)
 
 2. [Challenge: Array Binary Search](Challenges/BinarySearch)
 
-3. [Implementation: Linked List](DataStructures/LinkedList)
+3. [Challenge: Linked List Kth From End](Challenges/ll_kth_from_end)
 
-4. [Challenge: Linked List Kth From End](Challenges/ll_kth_from_end)
+4. [Challenge: Linked List Merge](Challenges/ll_merge)
 
-5. [Challenge: Linked List Merge](Challenges/ll_merge)
+5. [Challenge: Queue With Stacks](Challenges/QueueWithStacks)
 
-6. [Implementation: Stacks and Queues](DataStructures/StacksAndQueues)
- 
-7. [Challenge: Queue With Stacks](Challenges/QueueWithStacks)
- 
-8. [Challenge: Animal Shelter](Challenges/AnimalShelter)
+6. [Challenge: Animal Shelter](Challenges/AnimalShelter)
 
-9. [Challenge: Multi-Bracket Validation](Challenges/MultiBracketValidation)
+7. [Challenge: Multi-Bracket Validation](Challenges/MultiBracketValidation)
 
-10. [Implementation: Trees](DataStructures/Tree)
+8. [Challenge: FizzBuzzTree](Challenges/FizzBuzzTree)
 
-11. [Challenge: FizzBuzzTree](Challenges/FizzBuzzTree)
+9. [Challenge: Breath First Traversal](Challenges/BreadthFirstTraversal)
 
-12. [Challenge: Breath First Traversal](Challenges/BreadthFirstTraversal)
+10. [Challenge: Find Max Value](Challenges/FindMaxValue)
 
-13. [Challenge: Find Max Value](Challenges/FindMaxValue)
+11. [Challenge: Find First Repeated Word](Challenges/RepeatedWord)
 
-14. [Implementation: Hash Table](DataStructures/Hashtable)
+12. [Challenge: Tree Intersection](Challenges/TreeIntersection)
 
-15. [Implementation: Insertion Sort](Challenges/InsertionSort)
+13. [Challenge: Left Join](Challenges/LeftJoin)
 
-16. [Challenge: Find First Repeated Word](Challenges/RepeatedWord)
+### Implementations
 
-16. [Challenge: Tree Intersection](Challenges/TreeIntersection)
+#### Data Structures
 
-17. [Challenge: Left Join](Challenges/LeftJoin)
+1. [Implementation: Linked List](DataStructures/LinkedList)
+
+2. [Implementation: Stacks and Queues](DataStructures/StacksAndQueues)
+
+3. [Implementation: Trees](DataStructures/Tree)
+
+4. [Implementation: Hash Table](DataStructures/Hashtable)
+
+5. [Implementation: Graph](DataStructures/Graph)
+
+
+#### Sorting
+
+1. [Implementation: Insertion Sort](Challenges/InsertionSort)
+
 
 ### Snow Day Assignments
 
