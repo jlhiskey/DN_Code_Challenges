@@ -50,7 +50,11 @@ namespace Graph
         //GetVerticies
         public List<Vertex> GetVertices()
         {
-            return _AdjacencyList.Keys.ToList();
+            if(Size > 0)
+            {
+                return _AdjacencyList.Keys.ToList();
+            }
+            return null;
         }
 
         //GetNeighbors

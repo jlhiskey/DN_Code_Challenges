@@ -39,10 +39,15 @@ namespace GraphTestSuite
 
             Edge edgeOne = new Edge(vertexTwo, 10);
 
-            List<Edge> expected = new List<Edge>();
-            expected.Add(edgeOne);
+            List<Vertex> expected = new List<Vertex>();
+            expected.Add(edgeOne.Vertex);
 
-            List<Edge> actual = graph.GetNeighbors(vertexOne);
+            List<Edge> actualEdges = graph.GetNeighbors(vertexOne);
+            List<Vertex> actual = new List<Vertex>();
+            foreach(Edge edge in actualEdges)
+            {
+                actual.Add(edge.Vertex);
+            }
 
             Assert.Equal(expected, actual);
         }
@@ -85,13 +90,19 @@ namespace GraphTestSuite
             graph.AddEdge(vertexOne, vertexThree, 15);
 
             Edge edgeOne = new Edge(vertexTwo, 10);
-            Edge edgeTwo = new Edge(vertexTwo, 15);
+            Edge edgeTwo = new Edge(vertexThree, 15);
 
-            List<Edge> expected = new List<Edge>();
-            expected.Add(edgeOne);
-            expected.Add(edgeTwo);
+            List<Vertex> expected = new List<Vertex>();                
+           
+            expected.Add(edgeTwo.Vertex);
+            expected.Add(edgeOne.Vertex);
 
-            List<Edge> actual = graph.GetNeighbors(vertexOne);
+            List<Edge> actualEdges = graph.GetNeighbors(vertexOne);
+            List<Vertex> actual = new List<Vertex>();
+            foreach (Edge edge in actualEdges)
+            {
+                actual.Add(edge.Vertex);
+            }
 
             Assert.Equal(expected, actual);
         }
@@ -158,22 +169,30 @@ namespace GraphTestSuite
             Graph.Graph graph = new Graph.Graph();
 
             Vertex vertexOne = new Vertex("Hello");
+            graph.AddVertex(vertexOne);
             graph.AddEdge(vertexOne, vertexOne, 10);
 
             Edge edgeOne = new Edge(vertexOne, 10);
 
-            List<Edge> expected = new List<Edge>();
-            expected.Add(edgeOne);
+            List<Vertex> expected = new List<Vertex>();
+            expected.Add(edgeOne.Vertex);
 
-            List<Edge> actual = graph.GetNeighbors(vertexOne);
+            List<Edge> actualEdges = graph.GetNeighbors(vertexOne);
+            List<Vertex> actual = new List<Vertex>();
+            foreach (Edge edge in actualEdges)
+            {
+                actual.Add(edge.Vertex);
+            }
 
-            Assert.Equal(expected, expected);
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
         public void EmptyGraphReturnsNull()
         {
+            Graph.Graph graph = new Graph.Graph();
 
+            Assert.Null(graph.GetVertices());
         }
     }
 }
