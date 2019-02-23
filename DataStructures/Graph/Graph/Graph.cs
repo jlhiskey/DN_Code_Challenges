@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Graph
 {
@@ -25,13 +26,45 @@ namespace Graph
         {
             LinkedList<Edge> neighbors = new LinkedList<Edge>();
             _AdjacencyList.Add(vertex, neighbors);
+            Size = Size + 1;
         }
 
         //Add Edge
+        public void AddEdge(Vertex startVertex, Vertex endVertex, int weight = 0)
+        {
+            if(!_AdjacencyList.ContainsKey(startVertex) || !_AdjacencyList.ContainsKey(endVertex))
+            {
+                throw new Exception();
+            }
+
+            Edge edge = new Edge(endVertex, weight);
+            LinkedList<Edge> neighbors;
+
+            _AdjacencyList.TryGetValue(startVertex, out neighbors);    
+            
+            neighbors.AddFirst(edge);
+
+            _AdjacencyList[startVertex] = neighbors;
+        }
 
         //GetVerticies
+        public List<Vertex> GetVertices()
+        {
+            return _AdjacencyList.Keys.ToList();
+        }
 
         //GetNeighbors
+        public List<Edge> GetNeighbors(Vertex vertex)
+        {
+            if (!_AdjacencyList.ContainsKey(vertex))
+            {
+                throw new Exception();
+            }
+
+            LinkedList<Edge> neighbors;
+            _AdjacencyList.TryGetValue(vertex, out neighbors);
+            return neighbors.ToList();      
+        }
 
         //GetSize
 
