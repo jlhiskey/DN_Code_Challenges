@@ -67,6 +67,10 @@ namespace Graph
         }
 
         //GetSize
+        public int GetSize()
+        {
+            return Size;
+        }
 
 
     }
