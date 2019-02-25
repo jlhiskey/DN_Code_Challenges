@@ -102,54 +102,85 @@ namespace Graph
             return Size;
         }
 
-
+        /// <summary>
+        /// Conducts a breadth first traversal and returns a list of all visited Verticies.
+        /// </summary>
+        /// <param name="start"></param>
+        /// <returns>List of visited Verticies</returns>
         public List<Vertex> BreadthFirstTraversal(Vertex start)
         {
+            //Checks to make sure that start node exists in the graph.
             if (!_AdjacencyList.ContainsKey(start))
             {
                 Console.WriteLine("Graph doesn't contain start vertex");
                 return null;
             }
 
+            // Holds all Verticies that will be visited.
             Queue<Vertex> queue = new Queue<Vertex>();
 
+            // Holds all Verticies that have been visited.
             List<Vertex> inOrder = new List<Vertex>();
 
+            //Keeps track of all nodes that have been visited with fast retreival
             Dictionary<Vertex, object> visitedVerticies = new Dictionary<Vertex, object>();
 
+            //Adds start node to queue
             queue.Enqueue(start);
 
-            while(queue.Count > 0)
+            //Adds start node to visited dictionary
+            visitedVerticies.Add(start, null);
+
+            //Runs while there are Verticies in the queue.
+            while (queue.Count > 0)
             {
+                //Targets the oldest Vertex in the queue.
                 Vertex target = queue.Dequeue();
 
-                visitedVerticies.Add(target, null);
+                //Adds Vertex to the visited list.
                 inOrder.Add(target);
 
+                //Empty LinkedList to hold output.
                 LinkedList<Edge> neighbors;
 
+                //Outputs a Vertex's neighbors
                 _AdjacencyList.TryGetValue(target, out neighbors);
 
+                //Checks to see if the vertex has any neighbors.
                 if (neighbors.Count > 0)
                 {
+                    //Pulls the first edge out of the linked list.
                     Edge firstEdge = neighbors.First();
+
+                    //Uses the first edge data to create a LinkedListNode with the first LL node as currentEdge
                     LinkedListNode<Edge> currentEdge = neighbors.Find(firstEdge);
 
+                    //Runs until the end of the neighbors LL is reached.
                     while (currentEdge != null)
                     {
+                        //Isolates the Vertex out of the LL node
                         Vertex neighbor = currentEdge.Value.Vertex;
+                        //Checks to see if the neighbor has alread been visited.
                         if (!visitedVerticies.ContainsKey(neighbor))
                         {
+                            //Adds vertex to visited dictionary
+                            visitedVerticies.Add(neighbor, null);
+
+                            //Adds vertex to queue.
                             queue.Enqueue(neighbor);
                         }
+                        //Moves to next element of LL
                         currentEdge = currentEdge.Next;
                     }
                 }              
             }
+
+            // Checks if there is an island
             if(inOrder.Count < Size)
             {
                 Console.WriteLine("You found an island.");
             }
+            //Returns visited verticies
             return inOrder;
         }
 
