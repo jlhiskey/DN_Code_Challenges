@@ -102,7 +102,8 @@ namespace Graph
             return Size;
         }
 
-        public List<Vertex> BreadthFirst(Vertex start)
+
+        public List<Vertex> BreadthFirstTraversal(Vertex start)
         {
             if (!_AdjacencyList.ContainsKey(start))
             {
@@ -114,7 +115,7 @@ namespace Graph
 
             List<Vertex> inOrder = new List<Vertex>();
 
-            Dictionary<Vertex, object> visitedVertices = new Dictionary<Vertex, object>();
+            Dictionary<Vertex, object> visitedVerticies = new Dictionary<Vertex, object>();
 
             queue.Enqueue(start);
 
@@ -122,7 +123,7 @@ namespace Graph
             {
                 Vertex target = queue.Dequeue();
 
-                visitedVertices.Add(target, null);
+                visitedVerticies.Add(target, null);
                 inOrder.Add(target);
 
                 LinkedList<Edge> neighbors;
@@ -137,7 +138,7 @@ namespace Graph
                     while (currentEdge != null)
                     {
                         Vertex neighbor = currentEdge.Value.Vertex;
-                        if (!visitedVertices.ContainsKey(neighbor))
+                        if (!visitedVerticies.ContainsKey(neighbor))
                         {
                             queue.Enqueue(neighbor);
                         }

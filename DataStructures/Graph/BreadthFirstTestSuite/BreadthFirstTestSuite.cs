@@ -24,7 +24,7 @@ namespace BreadthFirstTestSuite
             expected.Add(vertexOne);
             expected.Add(vertexTwo);
 
-            List<Vertex> actual = graph.BreadthFirst(vertexOne);
+            List<Vertex> actual = graph.BreadthFirstTraversal(vertexOne);
 
             Assert.Equal(expected, actual);
         }
@@ -55,7 +55,7 @@ namespace BreadthFirstTestSuite
             expected.Add(vertexFour);
             expected.Add(vertexThree);
 
-            List<Vertex> actual = graph.BreadthFirst(vertexOne);
+            List<Vertex> actual = graph.BreadthFirstTraversal(vertexOne);
 
             Assert.Equal(expected, actual);
         }
@@ -87,7 +87,7 @@ namespace BreadthFirstTestSuite
             expected.Add(vertexFour);
             expected.Add(vertexThree);
 
-            List<Vertex> actual = graph.BreadthFirst(vertexOne);
+            List<Vertex> actual = graph.BreadthFirstTraversal(vertexOne);
 
             Assert.Equal(expected, actual);
         }
@@ -120,7 +120,7 @@ namespace BreadthFirstTestSuite
             expected.Add(vertexFour);
             expected.Add(vertexThree);
 
-            List<Vertex> actual = graph.BreadthFirst(vertexOne);
+            List<Vertex> actual = graph.BreadthFirstTraversal(vertexOne);
 
             Assert.Equal(expected, actual);
         }
