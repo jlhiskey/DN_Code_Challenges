@@ -1,7 +1,7 @@
 
 # Graph
  - Implement a Graph
-## Challenge
+## Implementation
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
 
 - AddVertex()
@@ -90,6 +90,39 @@ Graph Class
     - Output = int amount of Verticies in Graph
     - Accesses Size property and returns it.
 
+##### Additional Methods
+
+##### Challenge BreadthFirstTraversal
+
+  - BreadthFirst Method
+    - Input = Vertex start
+    - Output = InOrder List of Verticies that are connected to the start vertex (including start vertex).
+    - Checks _AdjacenyList to see if start exists in graph.
+      - If start isnt in graph then null is returned.
+    - Creates a new Queue of Verticies called queue that will handle traversal through the graph.
+    - Creates a new List of Verticies that will capture a Vertex when it is visited and will be output at end of method.
+    - Dictionary of Verticies called visitedVertices which will keep track of visited Verticies during traversal.
+    - Start is then enqueued into queue.
+    - Then a while loop is created that will run while queue > 0.
+      - A Vertex called target is then created and populated by dequeueing the oldest Vertex in the queue.
+      - The Vertex target is then added to the visitedVerticies Dictionary.
+      - The Vertex target is then added to the List inOrder.
+      - A LinkedList of Edges called neighbors is instantiated.
+      - The _AdjacencyList is then accessed using TryGetValue with the input key = vertex and the output = neighbors.
+      - If the output neighbors LinkedList contains Nodes
+        - A new Edge called firstEdge is populated with the first Edge that is found in the neighbors LinkedList.
+        - A new LinkedListNode called currentEdge is populated by finding the value in the neighbors LinkedList that matches firstEdge. (This allows me to iterate through the LinkedListNodes)
+        -  Then a while look is created that whill run while the value of currentEdge is not equal to null.
+           -  The Vertex neighbor is then retreived from the currentEdges.Value.Vertex property. 
+           -  Then a check is ran on the visitedVerticies dictionary to see if it already contains the incoming neighbor Vertex.
+              -  If the Vertex neighbor has already not been visited then neighbor is added to the queue.
+           - Then currentEdge is shifted to equal its .Next value.
+    - Then a comparison of the number of verticies in the inOrder list is compared to the graphs total Size
+      - If inOrder is smaller than the size of the graph then "You found an island" is printed.
+    - Then List of visited vertexes inOrder is then returned.
+
+
+
 ### Efficiency
 
 #### AddVertex Method
@@ -117,6 +150,14 @@ O(n)
 O(1)
 ##### Space
 O(1)
+
+### Additional Methods Efficiency
+
+#### BreadthFirstTraversal Method
+##### Time
+O(n)
+##### Space
+O(n)
 
 ## API
 ### Class Graph Required Classes
