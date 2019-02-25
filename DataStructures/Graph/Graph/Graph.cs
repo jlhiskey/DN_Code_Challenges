@@ -129,21 +129,27 @@ namespace Graph
 
                 _AdjacencyList.TryGetValue(target, out neighbors);
 
-                Edge firstEdge = neighbors.First();
-                LinkedListNode<Edge> currentEdge = neighbors.Find(firstEdge);
-
-                while (currentEdge != null)
+                if (neighbors.Count > 0)
                 {
-                    Vertex neighbor = currentEdge.Value.Vertex;
-                    if(!visitedVertices.ContainsKey(neighbor))
+                    Edge firstEdge = neighbors.First();
+                    LinkedListNode<Edge> currentEdge = neighbors.Find(firstEdge);
+
+                    while (currentEdge != null)
                     {
-                        queue.Enqueue(neighbor);
+                        Vertex neighbor = currentEdge.Value.Vertex;
+                        if (!visitedVertices.ContainsKey(neighbor))
+                        {
+                            queue.Enqueue(neighbor);
+                        }
+                        currentEdge = currentEdge.Next;
                     }
-                    currentEdge = currentEdge.Next;
-                }
+                }              
+            }
+            if(inOrder.Count < Size)
+            {
+                Console.WriteLine("You found an island.");
             }
             return inOrder;
-
         }
 
     }
