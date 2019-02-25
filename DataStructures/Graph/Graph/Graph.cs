@@ -90,7 +90,7 @@ namespace Graph
 
             LinkedList<Edge> neighbors;
             _AdjacencyList.TryGetValue(vertex, out neighbors);
-            return neighbors.ToList();      
+            return neighbors.ToList();
         }
 
         /// <summary>
@@ -102,6 +102,49 @@ namespace Graph
             return Size;
         }
 
+        public List<Vertex> BreadthFirst(Vertex start)
+        {
+            if (!_AdjacencyList.ContainsKey(start))
+            {
+                Console.WriteLine("Graph doesn't contain start vertex");
+                return null;
+            }
+
+            Queue<Vertex> queue = new Queue<Vertex>();
+
+            List<Vertex> inOrder = new List<Vertex>();
+
+            Dictionary<Vertex, object> visitedVertices = new Dictionary<Vertex, object>();
+
+            queue.Enqueue(start);
+
+            while(queue.Count > 0)
+            {
+                Vertex target = queue.Dequeue();
+
+                visitedVertices.Add(target, null);
+                inOrder.Add(target);
+
+                LinkedList<Edge> neighbors;
+
+                _AdjacencyList.TryGetValue(target, out neighbors);
+
+                Edge firstEdge = neighbors.First();
+                LinkedListNode<Edge> currentEdge = neighbors.Find(firstEdge);
+
+                while (currentEdge != null)
+                {
+                    Vertex neighbor = currentEdge.Value.Vertex;
+                    if(!visitedVertices.ContainsKey(neighbor))
+                    {
+                        queue.Enqueue(neighbor);
+                    }
+                    currentEdge = currentEdge.Next;
+                }
+            }
+            return inOrder;
+
+        }
 
     }
 }
