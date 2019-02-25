@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphTestSuite", "GraphTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreadthFirstTestSuite", "BreadthFirstTestSuite\BreadthFirstTestSuite.csproj", "{C54CFDBA-C89B-453B-B7A4-522F8C7EC7C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{AAF1CD5F-EAFB-448F-9D3E-98F04B7C452C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C54CFDBA-C89B-453B-B7A4-522F8C7EC7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C54CFDBA-C89B-453B-B7A4-522F8C7EC7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C54CFDBA-C89B-453B-B7A4-522F8C7EC7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF1CD5F-EAFB-448F-9D3E-98F04B7C452C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF1CD5F-EAFB-448F-9D3E-98F04B7C452C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF1CD5F-EAFB-448F-9D3E-98F04B7C452C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF1CD5F-EAFB-448F-9D3E-98F04B7C452C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
