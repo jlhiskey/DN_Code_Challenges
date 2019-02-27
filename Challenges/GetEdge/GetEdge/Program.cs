@@ -8,7 +8,30 @@ namespace GetEdge
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Graph.Graph cities = new Graph.Graph();
+
+            Vertex seattle = new Vertex("Seattle");
+            Vertex portland = new Vertex("Portland");
+            Vertex houston = new Vertex("Houston");
+
+            cities.AddVertex(seattle);
+            cities.AddVertex(portland);
+            cities.AddVertex(houston);
+
+            cities.AddEdge(seattle, portland, 100);
+            cities.AddEdge(portland, houston, 200);
+
+            Console.WriteLine(GetEdge(cities, "Seattle", "Portland"));
+
+            Console.WriteLine(GetEdge(cities, "Seattle", "Houston"));
+
+            Console.WriteLine(GetEdge(cities, "Cheboyban", "Houston"));
+
+            Console.WriteLine(GetEdge(cities, "Seattle", "Pawnee"));
+
+            Console.WriteLine(GetEdge(cities, "Cheboyban", "Pawnee"));
+
+            Console.ReadLine();
         }
 
         public static string GetEdge(Graph.Graph cities, string startingCity, string endingCity)
