@@ -11,27 +11,54 @@ namespace GetEdge
             Console.WriteLine("Hello World!");
         }
 
-        public string GetEdge(Graph.Graph cities, Vertex startingCity, Vertex endingCity)
+        public static string GetEdge(Graph.Graph cities, string startingCity, string endingCity)
         {
-            if(!cities._AdjacencyList.ContainsKey(startingCity))
+            List<Vertex> allCities = cities.GetVerticies();
+            bool startExists = false;
+            Vertex foundStart = null;
+            bool endExists = false;
+            Vertex foundFinish = null;
+            foreach (Vertex city in allCities)
             {
-                return "Starting City not found";
-            }
-
-            if (!cities._AdjacencyList.ContainsKey(endingCity))
-            {
-                return "Ending City not found";
-            }
-
-            List<Edge> neighbors = cities.GetNeighbors(startingCity);
-
-            foreach (Edge neighbor in neighbors)
-            {
-                if(neighbor.Vertex == endingCity)
+                if (city.Value == startingCity)
                 {
-                    return $"Direct Route Found, Cost = ${neighbor.Weight}";
+                    startExists = true;
+                    foundStart = city;
+                }
+
+                if (city.Value == endingCity)
+                {
+                    endExists = true;
+                    foundFinish = city;
                 }
             }
+
+            if(!startExists && !endExists)
+            {
+                return "Starting and Ending Cities Do Not Exist";
+            }
+            if (!startExists)
+            {
+                return "Starting City Does Not Exist";
+            }
+            if (!endExists)
+            {
+                return "Ending City Does Not Exist";
+            }
+            
+            if(foundStart != null)
+            {
+                List<Edge> neighbors = cities.GetNeighbors(foundStart);
+
+                foreach (Edge neighbor in neighbors)
+                {
+                    if (neighbor.Vertex.Value == endingCity)
+                    {
+                        return $"Direct Route Found, Cost = ${neighbor.Weight}";
+                    }
+                }
+            }
+            
             return "No Direct Route Found";
         }
     }

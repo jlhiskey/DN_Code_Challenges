@@ -16,4 +16,10 @@
     <ProjectReference Include="..\GetEdge\GetEdge.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Graph">
+      <HintPath>..\..\..\DataStructures\Graph\Graph\obj\Debug\netcoreapp2.2\Graph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
