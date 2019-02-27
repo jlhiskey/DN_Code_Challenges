@@ -31,6 +31,8 @@
 
 13. [Challenge: Left Join](Challenges/LeftJoin)
 
+14. [Challenge: Get Edge](Challenges/GetEdge)
+
 ### Implementations
 
 #### Data Structures
