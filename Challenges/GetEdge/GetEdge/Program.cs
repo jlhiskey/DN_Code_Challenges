@@ -84,7 +84,7 @@ namespace GetEdge
             //Searches neighbors for end city and returns success if found.
             foreach (Edge neighbor in neighbors)
             {
-                if (neighbor.Vertex.Value == endingCity)
+                if (neighbor.Vertex == foundEnd)
                 {
                     return $"Direct Route Found, Cost = ${neighbor.Weight}";
                 }

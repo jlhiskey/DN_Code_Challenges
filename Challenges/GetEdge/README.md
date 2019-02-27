@@ -1,12 +1,10 @@
 
-# Code Challenge 27: Tree Intersection
- - Find common values in 2 binary trees.
+# Code Challenge 32: Get Edge
+ - Given a business trip itinerary, and an Alaska Airlines route map, is the trip possible with direct flights? If so, how much will the total trip cost be?
 ## Challenge
-- Write a function that accepts a lengthy string parameter.
-- Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
+- Write a function based on the specifications above, which takes in a graph, and an array of city names. Without utilizing any of the built-in methods available to your language, return whether the full trip is possible with direct flights, and how much it would cost.
 ### Structure and Testing
-- Write a function called tree_intersection that takes two binary tree parameters.
-Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
+- Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
 
 - Write at least three test assertions for each method that you define.
 
@@ -14,30 +12,29 @@ Without utilizing any of the built-in library methods available to your language
 
 ## Approach & Efficiency
 ### Approach
-- I created the method TreeIntersection()
-  - Inputs: 2 BinaryTrees: treeOne and treeTwo
-  - Output: List of integer values.
-  - First I created a new int list called commonValues which will eventually hold common values found between both trees.
-  - I then created a HashTable called visitedValues that will eventually store all of treeOne's values.
-  - I then created a helper method called TraversalOne which takes in a Node root and will conduct a depth first traversal and as it touches nodes it will add that nodes value to the HashTable visitedValues in pre-order.
-  - I then created another helper method called TraversalTwo which takes in a Node root and will conduct a depth first traversal and as it touches nodes it will check to see if that nodes value in found within the Hashtable visitedValues and if found it will add that nodes value to the list commonValues in pre-order.
-  - I then call TraversalOne using treeOne.Root as the Node.
-  - I then call TraversalTwo using treeTwo.Root as the Node.
-  - I then return the list commonValues
+- I created the method GetEdge()
+  - Inputs: Graph cities, string startingCity, string endingCity
+  - Output: string indicating if direct flight can be acheived.
+  - First a list of allCities within cities is retreived 
+  - Then two containers called foundStart and foundEnd are created that will hold the target cities if they are found in the allCities list.
+  - Then a search of allCities is conducted and foundStart and foundEnd are populated if found.
+  - Then a missing data handler is run that checks to see if foundStart and foundEnd were found and will return a string indicating which one is missing from cities graph is data is missing.
+  - If all the data exists then a list of foundStart's neighbors (Edge's) is retreived.
+  - A search is conducted of the list and if an edge in the neighbors list containes foundEnd's Vertex data then a string is returned saying that a Direct Route is found and the target edges weight is printed as well.
+  - If the edge is not found then "No Direct Route Found" is printed.
    
 ### Efficiency
 #### Space
-O(h)
+O(1)
 #### Time
 O(n)
 
 ## API
-### method TreeIntersection Required Classes
+### method GetEdge Required Classes
 
-- HashTable class
-- HashNode class
-- BinaryTree class
-- Node class
+- Graph class
+  - Edge class
+  - Vertex class
 
 ## Whiteboard
 ![whiteboard image](./assets/Whiteboard.jpg)
