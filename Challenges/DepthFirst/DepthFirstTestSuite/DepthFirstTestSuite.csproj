@@ -12,4 +12,14 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DepthFirst\DepthFirst.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Graph">
+      <HintPath>..\..\..\DataStructures\Graph\Graph\obj\Debug\netcoreapp2.2\Graph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
