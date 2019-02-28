@@ -27,8 +27,15 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
   - Returns the total number of verticies in the graph
 
 
-## Approach & Efficiency
-### Approach
+## Approach, API & Efficiency
+
+### API and Approach
+
+#### Class Graph Required Classes
+- Graph requires Edge class and Vertex class.
+
+#### API Method Descriptions and Approach
+
 Vertex Class
 - Attributes
   - object Value (so that data can be generic)
@@ -159,7 +166,5 @@ O(n)
 ##### Space
 O(n)
 
-## API
-### Class Graph Required Classes
-- Graph requires Edge class and Vertex class.
+
 
