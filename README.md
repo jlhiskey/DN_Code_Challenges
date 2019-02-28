@@ -31,7 +31,9 @@
 
 13. [Challenge: Left Join](Challenges/LeftJoin)
 
-14. [Challenge: Get Edge](Challenges/GetEdge)
+14. [Challenge: Get Edge Graph](Challenges/GetEdge)
+
+15. [Challenge: Depth First Graph](Challenges/DepthFirst)
 
 ### Implementations
 

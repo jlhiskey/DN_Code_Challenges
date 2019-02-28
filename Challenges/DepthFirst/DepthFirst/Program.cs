@@ -8,7 +8,41 @@ namespace DepthFirst
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Graph.Graph graph = new Graph.Graph();
+            Vertex one = new Vertex(1);
+            Vertex two = new Vertex(2);
+            Vertex three = new Vertex(3);
+            Vertex four = new Vertex(4);
+            Vertex five = new Vertex(5);
+            Vertex six = new Vertex(6);
+            Vertex seven = new Vertex(7);
+            Vertex eight = new Vertex(8);
+
+            graph.AddVertex(one);
+            graph.AddVertex(two);
+            graph.AddVertex(three);
+            graph.AddVertex(four);
+            graph.AddVertex(five);
+            graph.AddVertex(six);
+            graph.AddVertex(seven);
+            graph.AddVertex(eight);
+
+            graph.AddEdge(one, two);
+            graph.AddEdge(one, five);
+            graph.AddEdge(one, seven);
+            graph.AddEdge(two, three);
+            graph.AddEdge(two, four);
+            graph.AddEdge(five, six);
+            graph.AddEdge(seven, eight);
+
+            List<Vertex> preOrder = DepthFirst(graph);
+
+            Console.WriteLine("Pre Order Values");
+            foreach(Vertex vertex in preOrder)
+            {
+                Console.WriteLine(vertex.Value);
+            }
+            Console.ReadLine();
         }
 
         /// <summary>
@@ -18,8 +52,42 @@ namespace DepthFirst
         /// <returns>List of visited verticies listed in pre order</returns>
         public static List<Vertex> DepthFirst(Graph.Graph graph)
         {
+            //Will keep track of visited verticies
+            HashSet<Vertex> visitedVerticies = new HashSet<Vertex>();
+
+            //Searches list of verticies values and returns lowest value or null if all verticies have already been visited.
+            Vertex FindLowestVertex(List<Vertex> listOfVerticies)
+            {
+
+                Vertex lowestVertex = null;
+
+                int lowestValue = 0;
+
+                foreach (Vertex vertex in listOfVerticies)
+                {
+                    if (!visitedVerticies.Contains(vertex))
+                    {
+                        if (lowestVertex == null)
+                        {
+                            lowestVertex = vertex;
+                            lowestValue = int.Parse(vertex.Value.ToString());
+                        }
+                        if (int.Parse(vertex.Value.ToString()) < lowestValue)
+                        {
+                            lowestVertex = vertex;
+                            lowestValue = int.Parse(vertex.Value.ToString());
+                        }
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                return lowestVertex;
+            }
+
             //Returns null if graph is empty.
-            if(graph.Size == 0)
+            if (graph.Size == 0)
             {
                 return null;
             }
@@ -30,52 +98,11 @@ namespace DepthFirst
             //All verticies in graph
             List<Vertex> allVerticies = graph.GetVerticies();
 
-            //Will keep track of visited verticies
-            HashSet<Vertex> visitedVerticies = new HashSet<Vertex>();
-
             //Will hold verticies during traversal
             Stack<Vertex> stack = new Stack<Vertex>();
 
-            //Will hold starting value for traversal
-            Vertex start = null;
-
-            //Searches list of verticies values and returns lowest value or null if all verticies have already been visited.
-            Vertex FindLowestVertex(List<Vertex> listOfVerticies)
-            {
-
-                Vertex lowestVertex = null;
-
-                int lowestValue = 0;
-
-                foreach(Vertex vertex in listOfVerticies)
-                {
-                    if(!visitedVerticies.Contains(vertex))
-                    {
-
-                        if (lowestVertex == null)
-                        {
-                            lowestVertex = vertex;
-                            lowestValue = int.Parse(vertex.Value.ToString());
-                        }
-
-                        if(int.Parse(vertex.Value.ToString()) < lowestValue)
-                        {
-                            lowestVertex = vertex;
-                            lowestValue = int.Parse(vertex.Value.ToString());
-                        }
-                    }
-
-                    else
-                    {
-                        return null;
-                    }  
-                    
-                }
-                return lowestVertex;
-            }
-
             //Sets start to lowest valued vertex in graph.
-            start = FindLowestVertex(allVerticies);
+            Vertex start = FindLowestVertex(allVerticies);
 
             //Adds start value to stack
             stack.Push(start);
