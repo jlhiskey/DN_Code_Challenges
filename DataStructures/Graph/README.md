@@ -166,5 +166,6 @@ O(n)
 ##### Space
 O(n)
 
+### Breadth First Traversal Whiteboard
 
-
+![whiteboard image](./assets/Whiteboard.jpg)
